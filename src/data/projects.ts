@@ -1,11 +1,11 @@
-import homezen from "../images/homezen.png"
+import homezen from "../images/HZ.png"
 import zingTongue from "../images/zingTongue.png"
 import nanami from "../images/nanami.png"
 import slib from "../images/zlib.png"
 import comfyPetsImage from "../images/comfyPetss.png"
 import Demo from "../images/Demo.gif"
-import queryGeniusAi from "../images/QueryGenius.png"
-import dataFlowAi from "../images/DataFlowAI.png"
+import queryGeniusAi from "../images/QG.png"
+import dataFlowAi from "../images/DFAI.png"
 import linguavoxAi from "../images/LinguoAI.png"
 import visionmatchAi from "../images/VisualMatchAI.png"
 import careerPilotAi from "../images/CareerPilot.png"
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     year: "2025",
     featured: false,
     link: "#",
-    number: "06",
+    number: "01",
     technologies: [
       {
         category: "Frontend",
@@ -217,7 +217,7 @@ export const projects: Project[] = [
     year: "2024",
     featured: false,
     link: "#",
-    number: "05",
+    number: "02",
     technologies: [
       { category: "Frontend", items: ["JavaScript", "HTML", "CSS"] },
       { category: "Backend", items: ["Python", "Flask", "SQLAlchemy"] },
@@ -285,7 +285,7 @@ export const projects: Project[] = [
     year: "2024",
     featured: false,
     link: "#", // Confidential project
-    number: "06",
+    number: "03",
     technologies: [
       { category: "Frontend", items: ["React", "Redux", "CSS"] },
       { category: "Backend", items: ["Python", "AWS Lambda", "API Gateway"] },
@@ -354,7 +354,7 @@ export const projects: Project[] = [
     year: "2024",
     featured: false,
     link: "#", // Confidential project
-    number: "07",
+    number: "04",
     technologies: [
       { category: "Frontend", items: ["HTML", "CSS", "JavaScript", "Bootstrap"] },
       { category: "Backend", items: ["Python", "Flask"] },
@@ -420,7 +420,7 @@ export const projects: Project[] = [
     year: "2024",
     featured: false,
     link: "#",
-    number: "08",
+    number: "05",
     technologies: [
       { category: "Frontend", items: ["HTML", "CSS", "JavaScript"] },
       { category: "Backend", items: ["Python", "Flask"] },
@@ -487,7 +487,7 @@ export const projects: Project[] = [
     year: "2024",
     featured: true,
     link: "https://ztwebapp.vercel.app/",
-    number: "02",
+    number: "06",
     technologies: [
       { category: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"] },
       { category: "Backend", items: ["Supabase", "PostgreSQL", "Edge Functions"] },
@@ -531,58 +531,56 @@ export const projects: Project[] = [
     slug: "AHomeAZen",
     image: homezen.src,
     title: "Home Zen",
-    subtitle: "Smart Home Management Platform",
+    subtitle: "All-in-One Real Estate & Interior Design Platform",
     description:
-      "A comprehensive platform for managing smart home devices with an intuitive interface and automation capabilities.",
+      "An end-to-end real estate platform to buy/sell homes, hire local contractors, design interiors in 3D with furniture price comparisons, and explore neighborhood amenities.",
     category: "product",
-    tags: ["React", "Node.js", "IoT", "PostgreSQL"],
+    tags: ["React", "Node.js", "Three.js", "PostgreSQL", "Google Maps API"],
     year: "2024",
     featured: true,
     link: "http://ahomeazen.co.in/",
-    number: "01",
+    number: "07",
     technologies: [
-      { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS"] },
+      { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Three.js / Canvas"] },
       { category: "Backend", items: ["Node.js", "Express", "REST API"] },
       { category: "Database", items: ["PostgreSQL"] },
-      { category: "Infrastructure", items: ["AWS IoT", "Docker"] },
+      { category: "Integrations", items: ["Google Maps / Places API", "E-commerce Price Scrapers"] },
     ],
     overview:
-      "HomeEase is a smart home management platform designed to simplify the control and automation of connected devices. It addresses the fragmentation problem in the IoT ecosystem, where users juggle multiple apps for different devices. The platform provides a unified dashboard for device management, automation rules, and energy monitoring — built for homeowners who want simplicity without sacrificing control.",
+      "Home Zen simplifies the homebuying and home improvement journey by combining property listings, local contractor hiring (electricians, gardeners, material supplier shops), and an interactive interior layout planner. Users can place 3D furniture models (sofas, tables, beds) inside their room blueprints, compare real-time prices across major retailers like IKEA and Amazon, and evaluate neighborhood amenities like schools, parks, and restaurants before making a purchase.",
     role: [
-      "Led full-stack development from concept to deployment",
-      "Designed and implemented the REST API architecture",
-      "Built the React frontend with real-time device status updates",
-      "Integrated AWS IoT Core for device communication",
-      "Designed the PostgreSQL schema for device states and automation rules",
-      "Implemented WebSocket connections for live updates",
+      "Led full-stack architecture and feature development from concept to deployment",
+      "Developed the interactive interior design preview tool for placing furniture and room layout objects",
+      "Implemented price aggregation logic to compare item costs across third-party retailers like IKEA and Amazon",
+      "Integrated spatial location mapping to display nearby schools, parks, and family amenities",
+      "Built real-time property listing and contractor service directory workflows",
     ],
     challenges: [
-      "Handling real-time state synchronization across 50+ concurrent device connections",
-      "Designing an automation rule engine that remains intuitive for non-technical users",
-      "Optimizing API response times for dashboard load under high concurrency",
+      "Optimizing rendering performance for interactive 3D layout canvas with multiple customizable assets",
+      "Normalizing and syncing real-time product pricing data across multiple external retail sources",
+      "Efficiently querying and rendering localized spatial data for neighborhood amenity exploration without performance bottlenecks",
     ],
     lessons: [
-      "Real-time systems require careful consideration of connection lifecycle and reconnection strategies",
-      "Simplifying complex automation logic into a visual interface is one of the hardest UX challenges",
-      "Type safety across the full stack dramatically reduces integration bugs",
+      "Managing complex client-side state for interactive design software requires careful optimization of render cycles",
+      "Aggregating multi-source third-party data demands resilient fallback strategies and caching",
+      "Location intelligence tools greatly impact user decision-making when presenting real estate data",
     ],
     gallery: [
       {
         type: "feature",
         src: "",
-        alt: "HomeEase dashboard showing device controls",
-        caption: "Unified dashboard for all connected devices",
+        alt: "Home Zen interactive 3D interior design software canvas",
+        caption: "3D room layout planner with multi-retailer furniture price comparison",
       },
       {
         type: "two",
-        alt: "HomeEase automation rules and energy monitoring",
-        caption: "Automation rules and energy insights",
+        alt: "Home Zen property listings and neighborhood amenity map",
+        caption: "Property marketplace and surrounding amenities map",
       },
     ],
     links: [
-      { label: "Live Project", href: "#" },
+      { label: "Live Project", href: "http://ahomeazen.co.in/" },
     ],
-
   },
   {
     show: 1,
@@ -597,7 +595,7 @@ export const projects: Project[] = [
     year: "2026",
     featured: true,
     link: "https://comfypets.vercel.app/",
-    number: "04",
+    number: "08",
     technologies: [
       { category: "Frontend (Web)", items: ["Next.js", "React", "Tailwind CSS"] },
       { category: "Mobile", items: ["React Native", "Expo"] },
@@ -669,7 +667,7 @@ export const projects: Project[] = [
     year: "2023",
     featured: false,
     link: "https://nanami-site.vercel.app/",
-    number: "05",
+    number: "09",
     technologies: [
       { category: "Frontend", items: ["Next.js", "React", "Framer Motion", "Tailwind CSS"] },
       { category: "CMS", items: ["Contentful"] },
@@ -709,7 +707,7 @@ export const projects: Project[] = [
     year: "2023",
     featured: true,
     link: "https://s-lib.vercel.app/",
-    number: "03",
+    number: "10",
     technologies: [
       { category: "Frontend", items: ["Vue.js", "Pinia", "Tailwind CSS"] },
       { category: "Backend", items: ["Firebase", "Firestore"] },
@@ -760,7 +758,7 @@ export const projects: Project[] = [
     year: "2024",
     featured: false,
     link: "https://github.com/shreyaDeb/Break-Time-Bliss",
-    number: "04",
+    number: "11",
     technologies: [
       { category: "Frontend", items: ["Tkinter"] },
       { category: "Backend", items: ["Python", "Threading"] },
