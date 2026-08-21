@@ -6,6 +6,7 @@ import { ContentContainer } from "@/components/layout";
 import { experience, education, personalInterests } from "@/data/about";
 import { projects } from "@/data/projects";
 import { useState } from "react";
+import { Reveal } from "@/components/motion";
 
 /* ─── Animation variants ─── */
 const fadeUp = {
@@ -81,28 +82,26 @@ export default function AboutPage() {
   };
 
   return (
-    <ContentContainer className="py-24">
-      {/* ─── HERO ─── */}
-      <motion.div
-        className="mb-20 lg:mb-28"
-        initial="hidden"
-        animate="visible"
-        variants={stagger}
-      >
-        <motion.div variants={itemFadeUp} className="flex items-center gap-4 mb-8">
-          <span className="w-6 h-px bg-foreground/30" aria-hidden="true" />
-          <p className="text-xs font-medium tracking-[0.25em] uppercase text-muted-foreground">
-            About
-          </p>
-        </motion.div>
+    <ContentContainer className="py-15 pt-3 pb-16 lg:pb-24">
 
-        <motion.h1
-          variants={itemFadeUp}
-          className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.1] max-w-4xl"
-        >
-          Software engineer, product builder, and someone who likes making things.
-        </motion.h1>
-      </motion.div>
+      {/* ─── HERO ─── */}
+      <section className="relative min-h-[50vh] flex items-center pt-3 pb-16 lg:pb-24 overflow-hidden">
+        <Reveal>
+          <div className="max-w-3xl">
+            {/* <motion.div variants={itemFadeUp} className="flex items-center gap-4 mb-8"> */}
+            <div className="flex items-center gap-4 mb-6">
+              <span className="w-6 h-px bg-foreground/30" aria-hidden="true" />
+              <p className="text-xs font-medium tracking-[0.25em] uppercase text-muted-foreground">
+                About
+              </p>
+            </div>
+            {/* </motion.div> */}
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.1] mb-6">
+              Software engineer, product builder, and someone who likes making things.
+            </h1>
+          </div>
+        </Reveal>
+      </section>
 
       {/* ─── INTRODUCTION ─── */}
       <motion.section
@@ -127,9 +126,41 @@ export default function AboutPage() {
         </div>
       </motion.section>
 
+      {/* ─── EDUCATION ─── */}
+      <motion.section
+        className="!py-15 mb-24 lg:mb-32"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={fadeUp}
+      >
+        <div className="flex items-center gap-4">
+          <span className="w-6 h-px bg-foreground/30" aria-hidden="true" />
+          <h2 className="text-xs font-medium tracking-[0.25em] uppercase text-muted-foreground">
+            Education
+          </h2>
+        </div>
+
+        <div className="max-w-2xl">
+          <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8">
+            <div className="flex-1">
+              <h3 className="font-display text-lg font-semibold text-foreground">
+                {education.institution}
+              </h3>
+              <p className="text-sm text-muted-foreground mt-1">
+                {education.degree} in {education.field}
+              </p>
+            </div>
+            <span className="text-sm text-muted-foreground/70 tabular-nums md:text-right">
+              {education.date}
+            </span>
+          </div>
+        </div>
+      </motion.section>
+
       {/* ─── EXPERIENCE ─── */}
       <motion.section
-        className="mb-24 lg:mb-32"
+        className=" !py-15 mb-24 lg:mb-32"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
@@ -186,41 +217,9 @@ export default function AboutPage() {
         </div>
       </motion.section>
 
-      {/* ─── EDUCATION ─── */}
-      <motion.section
-        className="mb-24 lg:mb-32"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
-        variants={fadeUp}
-      >
-        <div className="flex items-center gap-4 mb-12">
-          <span className="w-6 h-px bg-foreground/30" aria-hidden="true" />
-          <h2 className="text-xs font-medium tracking-[0.25em] uppercase text-muted-foreground">
-            Education
-          </h2>
-        </div>
-
-        <div className="max-w-2xl">
-          <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8">
-            <div className="flex-1">
-              <h3 className="font-display text-lg font-semibold text-foreground">
-                {education.institution}
-              </h3>
-              <p className="text-sm text-muted-foreground mt-1">
-                {education.degree} in {education.field}
-              </p>
-            </div>
-            <span className="text-sm text-muted-foreground/70 tabular-nums md:text-right">
-              {education.date}
-            </span>
-          </div>
-        </div>
-      </motion.section>
-
       {/* ─── TECHNOLOGY ─── */}
       <motion.section
-        className="mb-24 lg:mb-32"
+        className="!py-15 mb-24 lg:mb-32"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
@@ -246,7 +245,7 @@ export default function AboutPage() {
                 ease: [0.25, 0.1, 0.25, 1],
               }}
             >
-              <h3 className="text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground mb-4">
+              <h3 className="!py-5 text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground mb-4">
                 {category.category}
               </h3>
               <ul className="space-y-2">
@@ -267,10 +266,10 @@ export default function AboutPage() {
       {/* ─── PERSONAL SIDE ─── */}
       <motion.section
         className="mb-24 lg:mb-32"
+        variants={fadeUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        variants={fadeUp}
       >
         <div className="flex items-center gap-4 mb-12">
           <span className="w-6 h-px bg-foreground/30" aria-hidden="true" />
@@ -279,7 +278,7 @@ export default function AboutPage() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-16 lg:mb-24">
+        <div className="!py-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-16 lg:mb-24">
           {personalInterests.map((interest, index) => {
             const isActive = activeId === interest.id;
             // const icon = interestIcons[interest.id];
@@ -371,34 +370,92 @@ export default function AboutPage() {
       </motion.section>
 
       {/* ─── CTA ─── */}
-      <motion.section
-        className="pt-12 border-t border-border"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
-        variants={fadeUp}
-      >
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
-          <div>
-            <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-2">
-              Want to build something?
-            </h2>
-            <p className="text-muted-foreground">
-              I&apos;d love to hear about your project.
-            </p>
+      <section className="relative overflow-hidden py-24 lg:py-32">
+        <div className="relative z-10">
+          <div className="max-w-3xl">
+            {/* Headline */}
+            <motion.h2
+              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-foreground leading-[1.08] mb-6"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+            >
+              HAVE A PRODUCT{" "}
+              <span className="text-accent">WORTH BUILDING?</span>
+            </motion.h2>
+
+            {/* Supporting text */}
+            <motion.p
+              className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl mb-10"
+              variants={fadeUp} initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+            >
+              Let's talk about what you're building.
+            </motion.p>
+
+            {/* Primary CTA */}
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              className="!mb-5"
+            >
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-2 rounded-lg bg-accent !px-8 !py-4 text-sm font-semibold text-accent-foreground transition-all duration-300 hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              >
+                GET IN TOUCH
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  &rarr;
+                </span>
+              </Link>
+            </motion.div>
+
+            {/* Secondary links */}
+            {/* <motion.div
+              className="flex flex-wrap items-center gap-6 !pt-5 !pb-5 border-t border-border"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+            >
+              <Link
+                href="https://linkedin.com/in/shreyadeb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              >
+                LINKEDIN
+              </Link>
+              <Link
+                href="https://github.com/shreyadeb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              >
+                GITHUB
+              </Link>
+              <Link
+                href="mailto:shreya.deb@icloud.com"
+                className="text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              >
+                EMAIL
+              </Link>
+              <Link
+                href="/resume"
+                rel="noopener noreferrer"
+                className="text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              >
+                RESUME
+              </Link>
+            </motion.div> */}
           </div>
-          <Link
-            href="/contact"
-            className="group inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition-all duration-300 hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent w-fit"
-          >
-            Get in Touch
-            <span className="transition-transform duration-300 group-hover:translate-x-1">
-              &rarr;
-            </span>
-          </Link>
         </div>
-      </motion.section>
-    </ContentContainer>
+      </section>
+    </ContentContainer >
   );
 }
 

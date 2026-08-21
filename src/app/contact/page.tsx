@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { ContentContainer } from "@/components/layout";
+import { Reveal } from "@/components/motion";
 
 /* ─── Animation variants ─── */
 const stagger = {
@@ -31,7 +32,7 @@ const contactOptions = [
   {
     label: "EMAIL",
     description: "The most direct way to reach me. I read every message.",
-    href: "mailto:hello@shreyadeb.com",
+    href: "mailto:shreya.deb@icloud.com",
     external: false,
   },
   {
@@ -89,11 +90,11 @@ function ContactVisual() {
             shouldReduceMotion
               ? {}
               : {
-                  pathLength: 1,
-                  opacity: 0.4,
-                  transition: { duration: 1.6, ease: "easeInOut", delay: 0.2 },
-                  rotate: 360,
-                }
+                pathLength: 1,
+                opacity: 0.4,
+                transition: { duration: 1.6, ease: "easeInOut", delay: 0.2 },
+                rotate: 360,
+              }
           }
           style={{ transformOrigin: "200px 200px" }}
         />
@@ -110,10 +111,10 @@ function ContactVisual() {
             shouldReduceMotion
               ? {}
               : {
-                  pathLength: 1,
-                  opacity: 0.6,
-                  transition: { duration: 1.2, ease: "easeInOut", delay: 0.4 },
-                }
+                pathLength: 1,
+                opacity: 0.6,
+                transition: { duration: 1.2, ease: "easeInOut", delay: 0.4 },
+              }
           }
         />
 
@@ -139,7 +140,7 @@ export default function ContactPage() {
   return (
     <ContentContainer className="py-24">
       {/* ─── HERO ─── */}
-      <motion.div
+      {/* <motion.div
         className="mb-20 lg:mb-28"
         initial="hidden"
         animate="visible"
@@ -166,7 +167,27 @@ export default function ContactPage() {
           Have a product idea, interesting problem, or opportunity? I&apos;d
           love to hear about it.
         </motion.p>
-      </motion.div>
+      </motion.div> */}
+
+      <section className="relative min-h-[50vh] flex items-center !pt-3 !pb-16 lg:!pb-24 overflow-hidden">
+        <Reveal>
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="w-6 h-px bg-foreground/30" aria-hidden="true" />
+              <p className="text-xs font-medium tracking-[0.25em] uppercase text-muted-foreground">
+                Contact
+              </p>
+            </div>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.1] mb-6">
+              Let's build something.
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+              Have a product idea, interesting problem, or opportunity? I&apos;d
+              love to hear about it.
+            </p>
+          </div>
+        </Reveal>
+      </section>
 
       {/* ─── CONTENT GRID ─── */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -238,11 +259,11 @@ export default function ContactPage() {
               Or email directly
             </span>
             <a
-              href="mailto:hello@shreyadeb.com"
+              href="mailto:shreya.deb@icloud.com"
               className="group inline-flex items-center gap-2 text-lg sm:text-xl font-medium text-foreground hover:text-accent transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
             >
               <span className="border-b border-foreground/20 group-hover:border-accent transition-colors duration-300 pb-0.5">
-                hello@shreyadeb.com
+                shreya.deb@icloud.com
               </span>
               <svg
                 width="16"

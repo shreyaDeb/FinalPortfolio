@@ -20,39 +20,27 @@ export interface PersonalInterest {
 
 export const experience: Experience[] = [
   {
-    company: "HomeEase",
-    role: "Full-Stack Engineer",
+    company: "Xilligence",
+    role: "Junior Software Engineer / Full-Stack Developer",
+    date: "2024 – 2026",
+    description:
+      "Build and maintain full-stack web applications using modern frontend and backend technologies, with a focus on AI-powered features, APIs, and production-ready software.",
+  },
+
+  {
+    company: "Thoughts Circuit LLC",
+    role: "Software Engineer Trainee",
     date: "2024",
     description:
-      "Built a smart home management platform with real-time device controls, automation rules, and energy monitoring.",
+      "Worked on full-stack software development, building web applications and backend services while gaining hands-on experience with modern development workflows and APIs.",
   },
+
   {
-    company: "Zing Tongue",
-    role: "Full-Stack Engineer",
-    date: "2024",
+    company: "Softworld Technology LLC",
+    role: "Software Engineer Trainee",
+    date: "2023 – 2024",
     description:
-      "Developed an interactive language learning app with gamification and spaced repetition for accelerated fluency.",
-  },
-  {
-    company: "Slib",
-    role: "Full-Stack Engineer",
-    date: "2023",
-    description:
-      "Created a minimalist library management tool with smart categorization and full-text search.",
-  },
-  {
-    company: "Online Library",
-    role: "Full-Stack Engineer",
-    date: "2023",
-    description:
-      "Built a distraction-free digital reading platform with bookmarking, notes, and reading progress tracking.",
-  },
-  {
-    company: "Nanami's Website",
-    role: "Full-Stack Engineer",
-    date: "2023",
-    description:
-      "Developed a custom personal website with blog functionality and a distinctive visual identity for a client.",
+      "Developed and supported web applications while working with Python, Django, REST APIs, databases, and full-stack development practices.",
   },
 ];
 

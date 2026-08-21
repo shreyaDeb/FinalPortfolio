@@ -62,9 +62,9 @@ export function Hero() {
           >
             {/* Metadata */}
             <motion.div variants={fadeUp} className="mb-6">
-              <p className="text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground">
+              {/* <p className="text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground">
                 Shreya Deb
-              </p>
+              </p> */}
               <p className="text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground/70 mt-1.5">
                 Software Engineer / Product Builder
               </p>

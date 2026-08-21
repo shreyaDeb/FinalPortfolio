@@ -4,11 +4,15 @@ import nanami from "../images/nanami.png"
 import slib from "../images/zlib.png"
 import comfyPetsImage from "../images/comfyPetss.png"
 import Demo from "../images/Demo.gif"
-import queryGeniusAi from "../images/queryGeniusAi.png"
-import dataFlowAi from "../images/DataFlow.png"
-import linguavoxAi from "../images/VoiceText.png"
-import visionmatchAi from "../images/VisualMatch.png"
-
+import queryGeniusAi from "../images/QueryGenius.png"
+import dataFlowAi from "../images/DataFlowAI.png"
+import linguavoxAi from "../images/LinguoAI.png"
+import visionmatchAi from "../images/VisualMatchAI.png"
+import careerPilotAi from "../images/CareerPilot.png"
+import Agent1 from "../images/Agent1.png"
+import Agent2 from "../images/Agent2.png"
+import Agent3 from "../images/Agent3.png"
+import Agent4 from "../images/Agent4.png"
 export type ProjectCategory = "product" | "experiment" | "case-study";
 
 export interface Technology {
@@ -60,6 +64,146 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    show: 1,
+    slug: "careerpilot-ai",
+    image: careerPilotAi.src,
+    title: "CareerPilot AI",
+    subtitle: "Multi-Agent AI Job Search & Resume Optimization Platform",
+    description:
+      "A multi-agent AI system that automates job discovery, evaluates opportunities against a user's resume, generates personalized outreach, and creates tailored resumes for high-match positions.",
+    category: "product",
+    tags: [
+      "Python",
+      "AI Agents",
+      "LLM",
+      "OpenAI API",
+      "Web Scraping",
+      "NLP",
+      "Resume Analysis",
+      "Job Matching",
+      "Automation",
+      "MySQL",
+    ],
+    year: "2025",
+    featured: false,
+    link: "#",
+    number: "06",
+    technologies: [
+      {
+        category: "Frontend",
+        items: ["Next.Js"],
+      },
+      {
+        category: "Backend",
+        items: ["Python"],
+      },
+      {
+        category: "AI & Agents",
+        items: [
+          "OpenAI API",
+          "LLM",
+          "AI Agents",
+          "NLP",
+          "Prompt Engineering",
+        ],
+      },
+      {
+        category: "Job Discovery",
+        items: [
+          "Web Scraping",
+          "LinkedIn",
+          "Indeed",
+          "Glassdoor",
+        ],
+      },
+      {
+        category: "Data Processing",
+        items: [
+          "Resume Analysis",
+          "Job Matching",
+          "Document Generation",
+        ],
+      },
+      {
+        category: "Database",
+        items: ["MySQL"],
+      },
+    ],
+    overview:
+      "CareerPilot AI is a multi-agent job search and career automation system designed to streamline the process of finding and applying to relevant opportunities. The first AI agent searches selected job platforms based on the user's target location, desired position, and preferred job portals, then organizes each opportunity with details such as the company, position, job description, and application URL. A second AI agent analyzes each opportunity against the user's resume, assigns a match score, identifies areas for resume improvement, explains why the candidate is a strong fit, and generates personalized cold emails for recruiters and development managers. A third AI agent uses these insights to create a tailored resume for each selected opportunity based on a user-defined target match percentage. The system can run automatically on a scheduled basis, allowing users to review generated opportunities and resumes and complete applications themselves when automated applications are not supported.",
+    role: [
+      "Designed and developed the multi-agent architecture for automated job discovery and application preparation",
+      "Built the job discovery agent to search multiple job platforms based on user-defined location, position, and platform preferences",
+      "Developed structured job data extraction and organization including company, position, job description, and application URLs",
+      "Implemented resume-to-job matching to evaluate opportunities against the user's existing resume",
+      "Developed AI-generated match scores and personalized recommendations for improving resumes",
+      "Implemented automated generation of personalized cold emails for recruiters and development managers",
+      "Built the resume generation agent to create job-specific resumes based on a configurable target match percentage",
+      "Designed the workflow for storing generated job analyses, outreach content, and tailored resumes",
+      "Implemented scheduled execution allowing the complete workflow to run automatically based on the user's preferred schedule",
+      "Designed the workflow so users retain control of the final application process while AI handles discovery and preparation",
+    ],
+    challenges: [
+      "Designing a reliable multi-agent workflow where the output of one AI agent becomes structured input for the next",
+      "Extracting consistent job information from different job platforms with varying layouts and data structures",
+      "Accurately evaluating the relationship between a candidate's resume and diverse job descriptions",
+      "Generating meaningful match scores that reflect both technical requirements and overall candidate fit",
+      "Creating tailored resumes without introducing inaccurate or fabricated candidate experience",
+      "Generating personalized outreach messages while maintaining a natural and professional tone",
+      "Keeping structured job, analysis, outreach, and resume data synchronized across multiple AI processing stages",
+      "Handling different job platforms and application workflows while avoiding automated submission where it is unsupported",
+      "Managing the cost, latency, and reliability of running multiple AI agents across large numbers of job opportunities",
+      "Designing scheduled automation that could execute reliably without requiring the user to manually start every search",
+    ],
+    lessons: [
+      "Learned how to design multi-agent AI workflows where specialized agents collaborate through structured data",
+      "Gained practical experience using LLMs for resume analysis, job matching, content generation, and document automation",
+      "Learned that reliable AI automation requires carefully structured inputs and outputs between individual agents",
+      "Developed a deeper understanding of prompt engineering for consistent job analysis and resume generation",
+      "Learned how to combine web data extraction with AI processing to transform unstructured job listings into actionable career insights",
+      "Discovered the importance of keeping humans in the loop when AI-generated content is used for real-world job applications",
+      "Learned how configurable AI workflows can personalize automation based on individual user goals and preferences",
+    ],
+    gallery: [
+      {
+        type: "image-text",
+        src: Agent1.src,
+        alt: "CareerPilot AI job discovery dashboard",
+        caption: "AI-powered job discovery",
+        text:
+          "The first AI agent searches selected job platforms based on the user's preferred location, position, and job portals, then organizes opportunities into a structured list containing company, position, job description, and application URL.",
+      },
+      {
+        type: "image-text",
+        src: Agent2.src,
+        alt: "CareerPilot AI job matching dashboard",
+        caption: "AI resume-to-job matching",
+        text:
+          "The second AI agent evaluates each opportunity against the user's resume, generates a match score, identifies areas for improvement, and explains why the candidate is a strong fit for the position.",
+      },
+      {
+        type: "image-text",
+        src: Agent3.src,
+        alt: "CareerPilot AI outreach generation",
+        caption: "Personalized AI outreach",
+        text:
+          "For each relevant opportunity, the system generates personalized cold emails for recruiters and development managers, helping candidates reach the right people with role-specific messaging.",
+      },
+      {
+        type: "image-text",
+        src: Agent4.src,
+        alt: "CareerPilot AI tailored resume generation",
+        caption: "Automated tailored resumes",
+        text:
+          "The third AI agent uses the job analysis and candidate information to generate a tailored resume for each opportunity according to the user's desired match percentage.",
+      },
+    ],
+    links: [
+      { label: "Source Code", href: "#" }, // Confidential
+      { label: "Live Project", href: "#" }, // Confidential
+    ],
+  },
   {
     show: 0,
     slug: "querygenius-ai",

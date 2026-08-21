@@ -100,7 +100,7 @@ export function BrowserVisual({
           <motion.img
             src={image}
             alt={alt}
-            className="w-full h-full object-cover rounded"
+            className="w-full h-full object-contain rounded"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           />

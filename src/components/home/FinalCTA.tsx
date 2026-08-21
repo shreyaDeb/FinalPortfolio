@@ -84,15 +84,15 @@ export function FinalCTA() {
 
           {/* Primary CTA */}
           <motion.div
-            variants={shouldReduceMotion ? {} : ctaAppear}
+            // variants={shouldReduceMotion ? {} : ctaAppear}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="mb-12"
+            className="!mb-5"
           >
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-4 text-sm font-semibold text-accent-foreground transition-all duration-300 hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="group inline-flex items-center gap-2 rounded-lg bg-accent !px-8 !py-4 text-sm font-semibold text-accent-foreground transition-all duration-300 hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               GET IN TOUCH
               <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -102,9 +102,9 @@ export function FinalCTA() {
           </motion.div>
 
           {/* Secondary links */}
-          <motion.div
-            className="flex flex-wrap items-center gap-6 pt-8 border-t border-border"
-            variants={shouldReduceMotion ? {} : linksFadeIn}
+          {/* <motion.div
+            className="flex flex-wrap items-center gap-6 !pt-5 !pb-5 border-t border-border"
+            // variants={shouldReduceMotion ? {} : linksFadeIn}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
@@ -132,14 +132,13 @@ export function FinalCTA() {
               EMAIL
             </Link>
             <Link
-              href="/resume.pdf"
-              target="_blank"
+              href="/resume"
               rel="noopener noreferrer"
               className="text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               RESUME
             </Link>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

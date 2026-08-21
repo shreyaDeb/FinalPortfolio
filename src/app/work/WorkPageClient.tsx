@@ -18,9 +18,12 @@ export function WorkPageClient({ projects }: WorkPageClientProps) {
       <section className="relative min-h-[50vh] flex items-center pt-3 pb-16 lg:pb-24 overflow-hidden">
         <Reveal>
           <div className="max-w-3xl">
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground mb-6">
-              Selected Work
+          <div className="flex items-center gap-4 mb-6">
+            <span className="w-6 h-px bg-foreground/30" aria-hidden="true" />
+            <p className="text-xs font-medium tracking-[0.25em] uppercase text-muted-foreground">
+              All Works
             </p>
+          </div>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.1] mb-6">
               Things I've built, shipped, and learned from.
             </h1>

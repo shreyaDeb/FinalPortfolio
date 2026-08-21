@@ -64,7 +64,7 @@ export function AboutPreview() {
   };
 
   return (
-    <section className="py-24 lg:py-32 pt-3 pb-3">
+    <section className="!py-15 lg:py-32 pt-3 pb-3">
       {/* Header */}
       <div className="mb-16 lg:mb-24">
         <div className="flex items-center gap-4 mb-6">
