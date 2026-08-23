@@ -8,11 +8,11 @@ import queryGeniusAi from "../images/QG.png"
 import dataFlowAi from "../images/DFAI.png"
 import linguavoxAi from "../images/LinguoAI.png"
 import visionmatchAi from "../images/VisualMatchAI.png"
-import careerPilotAi from "../images/CareerPilot.png"
-import Agent1 from "../images/Agent1.png"
-import Agent2 from "../images/Agent2.png"
-import Agent3 from "../images/Agent3.png"
-import Agent4 from "../images/Agent4.png"
+import jobAlignAi from "../images/JobAlignAI.png"
+import Agent1 from "../images/Agent11.png"
+import Agent2 from "../images/Agent22.png"
+import Agent3 from "../images/Agent33.png"
+import Agent4 from "../images/Agent44.png"
 export type ProjectCategory = "product" | "experiment" | "case-study";
 
 export interface Technology {
@@ -66,9 +66,9 @@ export interface Project {
 export const projects: Project[] = [
   {
     show: 1,
-    slug: "careerpilot-ai",
-    image: careerPilotAi.src,
-    title: "CareerPilot AI",
+    slug: "align-ai",
+    image: jobAlignAi.src,
+    title: "Align AI",
     subtitle: "Multi-Agent AI Job Search & Resume Optimization Platform",
     description:
       "A multi-agent AI system that automates job discovery, evaluates opportunities against a user's resume, generates personalized outreach, and creates tailored resumes for high-match positions.",
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     ],
     year: "2025",
     featured: false,
-    link: "#",
+    link: "https://jobalign-ai.vercel.app/",
     number: "01",
     technologies: [
       {
@@ -131,7 +131,7 @@ export const projects: Project[] = [
       },
     ],
     overview:
-      "CareerPilot AI is a multi-agent job search and career automation system designed to streamline the process of finding and applying to relevant opportunities. The first AI agent searches selected job platforms based on the user's target location, desired position, and preferred job portals, then organizes each opportunity with details such as the company, position, job description, and application URL. A second AI agent analyzes each opportunity against the user's resume, assigns a match score, identifies areas for resume improvement, explains why the candidate is a strong fit, and generates personalized cold emails for recruiters and development managers. A third AI agent uses these insights to create a tailored resume for each selected opportunity based on a user-defined target match percentage. The system can run automatically on a scheduled basis, allowing users to review generated opportunities and resumes and complete applications themselves when automated applications are not supported.",
+      "Align AI is a multi-agent job search and career automation system designed to streamline the process of finding and applying to relevant opportunities. The first AI agent searches selected job platforms based on the user's target location, desired position, and preferred job portals, then organizes each opportunity with details such as the company, position, job description, and application URL. A second AI agent analyzes each opportunity against the user's resume, assigns a match score, identifies areas for resume improvement, explains why the candidate is a strong fit, and generates personalized cold emails for recruiters and development managers. A third AI agent uses these insights to create a tailored resume for each selected opportunity based on a user-defined target match percentage. The system can run automatically on a scheduled basis, allowing users to review generated opportunities and resumes and complete applications themselves when automated applications are not supported.",
     role: [
       "Designed and developed the multi-agent architecture for automated job discovery and application preparation",
       "Built the job discovery agent to search multiple job platforms based on user-defined location, position, and platform preferences",
@@ -169,7 +169,7 @@ export const projects: Project[] = [
       {
         type: "image-text",
         src: Agent1.src,
-        alt: "CareerPilot AI job discovery dashboard",
+        alt: "Align AI job discovery dashboard",
         caption: "AI-powered job discovery",
         text:
           "The first AI agent searches selected job platforms based on the user's preferred location, position, and job portals, then organizes opportunities into a structured list containing company, position, job description, and application URL.",
@@ -177,7 +177,7 @@ export const projects: Project[] = [
       {
         type: "image-text",
         src: Agent2.src,
-        alt: "CareerPilot AI job matching dashboard",
+        alt: "Align AI job matching dashboard",
         caption: "AI resume-to-job matching",
         text:
           "The second AI agent evaluates each opportunity against the user's resume, generates a match score, identifies areas for improvement, and explains why the candidate is a strong fit for the position.",
@@ -185,7 +185,7 @@ export const projects: Project[] = [
       {
         type: "image-text",
         src: Agent3.src,
-        alt: "CareerPilot AI outreach generation",
+        alt: "Align AI outreach generation",
         caption: "Personalized AI outreach",
         text:
           "For each relevant opportunity, the system generates personalized cold emails for recruiters and development managers, helping candidates reach the right people with role-specific messaging.",
@@ -193,7 +193,7 @@ export const projects: Project[] = [
       {
         type: "image-text",
         src: Agent4.src,
-        alt: "CareerPilot AI tailored resume generation",
+        alt: "Align AI tailored resume generation",
         caption: "Automated tailored resumes",
         text:
           "The third AI agent uses the job analysis and candidate information to generate a tailored resume for each opportunity according to the user's desired match percentage.",
