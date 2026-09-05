@@ -14,9 +14,9 @@ export function ProjectChallenges({ challenges }: ProjectChallengesProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-        className="mb-24"
+        className="!mb-24"
       >
-        <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-6">
+        <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground !mb-6">
           The Interesting Part
         </h2>
         <div className="rounded-xl border border-dashed border-border p-8 text-center">
@@ -34,12 +34,12 @@ export function ProjectChallenges({ challenges }: ProjectChallengesProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      className="mb-24"
+      className="!mb-24"
     >
-      <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-6">
+      <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground !mb-6">
         The Interesting Part
       </h2>
-      <p className="text-muted-foreground leading-relaxed max-w-3xl mb-8">
+      <p className="text-muted-foreground leading-relaxed max-w-3xl !mb-8">
         The most interesting engineering and product challenges I encountered while building this:
       </p>
       <ul className="max-w-3xl space-y-4">

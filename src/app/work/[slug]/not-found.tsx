@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 
 export default function ProjectNotFound() {
   return (
-    <ContentContainer className="py-24 lg:py-32">
-      <div className="max-w-2xl mx-auto text-center">
-        <p className="text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground mb-6">
+    <ContentContainer className="!py-24 lg:!py-32">
+      <div className="max-w-2xl !mx-auto text-center">
+        <p className="text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground !mb-6">
           404
         </p>
         <h1 className="font-display text-4xl md:text-5xl font-semibold tracking-tight text-foreground mb-6">
           Project Not Found
         </h1>
-        <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+        <p className="text-lg text-muted-foreground leading-relaxed !mb-10">
           The project you&apos;re looking for doesn&apos;t exist or may have been moved.
         </p>
         <Link

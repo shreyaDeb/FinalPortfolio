@@ -15,7 +15,7 @@ function FullWidthImage({ item }: { item: GalleryItem }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      className="mb-16"
+      className="!mb-16"
     >
       <BrowserVisual
         image={item.src}
@@ -23,7 +23,7 @@ function FullWidthImage({ item }: { item: GalleryItem }) {
         aspectRatio="16/10"
       />
       {item.caption && (
-        <p className="mt-4 text-sm text-muted-foreground text-center">
+        <p className="!mt-4 text-sm text-muted-foreground text-center">
           {item.caption}
         </p>
       )}
@@ -39,7 +39,7 @@ function TwoImageLayout({ items }: { items: GalleryItem[] }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-6"
+      className="!mb-16 grid grid-cols-1 md:grid-cols-2 gap-6"
     >
       {items.slice(0, 2).map((item, index) => (
         <div key={index}>
@@ -49,7 +49,7 @@ function TwoImageLayout({ items }: { items: GalleryItem[] }) {
             aspectRatio="4/3"
           />
           {item.caption && (
-            <p className="mt-3 text-sm text-muted-foreground text-center">
+            <p className="!mt-3 text-sm text-muted-foreground text-center">
               {item.caption}
             </p>
           )}
@@ -66,7 +66,7 @@ function ImageWithText({ item }: { item: GalleryItem }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+      className="!mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
     >
       <BrowserVisual
         image={item.src}
@@ -91,7 +91,7 @@ function FeatureImage({ item }: { item: GalleryItem }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      className="mb-16"
+      className="!mb-16"
     >
       <BrowserVisual
         image={item.src}
@@ -99,7 +99,7 @@ function FeatureImage({ item }: { item: GalleryItem }) {
         aspectRatio="16/10"
       />
       {item.caption && (
-        <p className="mt-4 text-sm text-muted-foreground text-center">
+        <p className="!mt-4 text-sm text-muted-foreground text-center">
           {item.caption}
         </p>
       )}
@@ -115,9 +115,9 @@ export function ProjectGallery({ gallery }: ProjectGalleryProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-        className="mb-24"
+        className="!mb-24"
       >
-        <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-6">
+        <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground !mb-6">
           Visual Story
         </h2>
         <div className="rounded-xl border border-dashed border-border p-8 text-center">
@@ -135,9 +135,9 @@ export function ProjectGallery({ gallery }: ProjectGalleryProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      className="mb-24"
+      className="!mb-24"
     >
-      <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-12">
+      <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground !mb-12">
         Visual Story
       </h2>
       <div>

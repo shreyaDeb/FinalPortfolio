@@ -16,10 +16,10 @@ export function ProjectIntro({ project }: ProjectIntroProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-      className="mb-16"
+      className="!mb-16"
     >
       {/* Project Number & Category */}
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex items-center gap-4 !mb-6">
         {project.number && (
           <span className="text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground/60">
             {String(project.number).padStart(2, "0")}
@@ -31,24 +31,24 @@ export function ProjectIntro({ project }: ProjectIntroProps) {
       </div>
 
       {/* Title & Subtitle */}
-      <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.1] mb-4">
+      <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.1] !mb-4">
         {project.title}
       </h1>
-      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mb-6">
+      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl !mb-6">
         {project.subtitle}
       </p>
 
       {/* Short Description */}
-      <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mb-8">
+      <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl !mb-8">
         {project.description}
       </p>
 
       {/* Technology Metadata */}
-      <div className="flex flex-wrap gap-2 mb-8">
+      <div className="flex flex-wrap gap-2 !mb-8">
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="inline-flex items-center rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground !px-4 !py-1.5"
+            className="inline-flex items-center rounded-full border border-border !px-3 !py-1 text-xs font-medium text-muted-foreground !px-4 !py-1.5"
           >
             {tag}
           </span>

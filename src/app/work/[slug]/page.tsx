@@ -55,7 +55,7 @@ export default async function ProjectPage({ params }: PageProps) {
   const nextProject = getNextProject(slug);
 
   return (
-    <ContentContainer className="py-12 lg:py-20">
+    <ContentContainer className="!py-12 lg:!py-20">
       {/* Project Intro */}
       <ProjectIntro project={project} />
 

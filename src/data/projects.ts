@@ -13,6 +13,8 @@ import Agent1 from "../images/Agent11.png"
 import Agent2 from "../images/Agent22.png"
 import Agent3 from "../images/Agent33.png"
 import Agent4 from "../images/Agent44.png"
+import auditFlowAI from "../images/AFAI.png"
+import nexahomeAi from "../images/NexaHomeAI.png"
 export type ProjectCategory = "product" | "experiment" | "case-study";
 
 export interface Technology {
@@ -66,6 +68,150 @@ export interface Project {
 export const projects: Project[] = [
   {
     show: 1,
+    slug: "audit-flow-ai",
+    image: auditFlowAI.src,
+    title: "AuditFlow AI",
+    subtitle: "AI-Powered Logistics Spend Recovery & Shipping Audit Platform",
+    description:
+      "An AI-powered logistics auditing platform that analyzes shipping invoices against orders, carrier rate cards, and contracts to detect overcharges, identify the cause of billing discrepancies, calculate recoverable money, and automate the dispute and recovery process.",
+    category: "product",
+    tags: [
+      "Python",
+      "AI Agents",
+      "LLM",
+      "OpenAI API",
+      "Document AI",
+      "PDF Parsing",
+      "Invoice Auditing",
+      "Logistics",
+      "Financial Reconciliation",
+      "Discrepancy Detection",
+      "Rate Analysis",
+      "Automation",
+      "Pydantic",
+      "MySQL",
+    ],
+    year: "2026",
+    featured: false,
+    link: "https://ai-auditflow.vercel.app/",
+    number: "01",
+    technologies: [
+      {
+        category: "Frontend",
+        items: ["Next.Js", "React", "Tailwind CSS"],
+      },
+      {
+        category: "Backend",
+        items: ["Python", "FastAPI"],
+      },
+      {
+        category: "AI & Agents",
+        items: [
+          "OpenAI API",
+          "LLM",
+          "AI Agents",
+          "Document AI",
+          "Prompt Engineering",
+        ],
+      },
+      {
+        category: "Document Processing",
+        items: [
+          "PDF Parsing",
+          "Invoice Extraction",
+          "Structured Data Extraction",
+          "Pydantic",
+        ],
+      },
+      {
+        category: "Financial Analysis",
+        items: [
+          "Invoice Reconciliation",
+          "Rate Calculation",
+          "Discrepancy Detection",
+          "Cost Analysis",
+        ],
+      },
+      {
+        category: "Logistics",
+        items: [
+          "Shipping Auditing",
+          "Carrier Rate Cards",
+          "Weight Analysis",
+          "Zone Analysis",
+          "Surcharge Analysis",
+        ],
+      },
+      {
+        category: "Automation",
+        items: [
+          "AI Investigation",
+          "Dispute Generation",
+          "Recovery Tracking",
+          "Scheduled Audits",
+        ],
+      },
+      {
+        category: "Database",
+        items: ["MySQL"],
+      },
+    ],
+    overview:
+      "Recover AI is a logistics spend recovery platform designed to help businesses identify and recover money lost to shipping billing errors. The system compares internal shipment and order records against carrier invoices, negotiated rate cards, and contractual pricing rules to determine what each shipment should have cost. It detects discrepancies such as incorrect billed weight, volumetric-weight errors, incorrect shipping zones, duplicate charges, incorrect surcharges, and other carrier billing inconsistencies. A document-processing pipeline extracts structured information from invoices, rate cards, and contracts, while deterministic financial logic calculates expected shipping costs and identifies discrepancies. AI agents then investigate high-risk discrepancies, explain the likely cause, collect supporting evidence, estimate recoverable amounts, and prepare dispute claims. Instead of stopping at anomaly detection, the platform tracks the complete recovery lifecycle from potential overcharge to dispute submission, carrier response, and money recovered.",
+    role: [
+      "Designed and developed the architecture for an AI-powered logistics spend recovery platform",
+      "Built the workflow for ingesting shipment records, courier invoices, rate cards, and contractual pricing documents",
+      "Developed document-processing pipelines to extract structured shipment, pricing, and billing information from unstructured PDF documents",
+      "Implemented Pydantic-based schemas to validate and normalize extracted invoice and logistics data",
+      "Developed deterministic rate calculation logic to determine the expected shipping cost for individual shipments",
+      "Implemented invoice-to-shipment reconciliation to compare actual carrier charges against expected charges",
+      "Built discrepancy detection for incorrect billed weight, volumetric weight, shipping zones, duplicate charges, surcharges, and other billing anomalies",
+      "Developed AI-powered investigation workflows to determine the likely cause of individual billing discrepancies",
+      "Implemented evidence-based discrepancy explanations using shipment records, invoice data, rate cards, and contract rules",
+      "Designed recovery calculations to distinguish total potential overcharges from high-confidence recoverable amounts",
+      "Built automated dispute-generation workflows that transform verified discrepancies into carrier-ready claims",
+      "Designed the recovery workflow to group related discrepancies into larger dispute cases rather than requiring individual claims for every shipment",
+      "Implemented recovery tracking across potential, approved, disputed, recovered, rejected, and pending amounts",
+      "Designed dashboards for monitoring shipping spend, discrepancy trends, potential recovery, dispute activity, and recovered money",
+      "Built the system architecture to support scheduled recurring audits as the platform evolves toward continuous logistics monitoring",
+      "Designed the platform around human-in-the-loop approval so businesses maintain control over financial decisions and dispute submissions",
+    ],
+    challenges: [
+      "Designing a reliable reconciliation system that can compare inconsistent data from internal shipment records, carrier invoices, rate cards, and contracts",
+      "Extracting accurate structured financial and logistics data from invoices and pricing documents with different layouts and formats",
+      "Handling carrier-specific billing rules such as weight tiers, volumetric weight, shipping zones, fuel surcharges, COD fees, and remote-area charges",
+      "Separating deterministic financial calculations from probabilistic AI reasoning so that the system does not rely on an LLM for critical monetary calculations",
+      "Matching invoice records to internal shipment records despite differences in order IDs, tracking numbers, naming conventions, and data formats",
+      "Determining whether a detected difference represents a genuine billing error or a legitimate carrier charge",
+      "Providing evidence-backed explanations for discrepancies rather than producing unexplained AI-generated conclusions",
+      "Maintaining accuracy when customer-specific negotiated rates differ from standard carrier pricing",
+      "Designing an audit trail that allows users to understand exactly why a shipment was flagged and how its recovery amount was calculated",
+      "Grouping related discrepancies into meaningful recovery cases while preserving the evidence behind each individual shipment",
+      "Generating dispute claims that are specific enough to be actionable while avoiding unsupported or fabricated financial claims",
+      "Designing a human-in-the-loop workflow for reviewing high-value discrepancies before disputes are submitted",
+      "Managing large shipment datasets while keeping audit processing reliable, efficient, and traceable",
+      "Designing the architecture so additional carriers and different pricing models can be introduced without rewriting the core audit engine",
+    ],
+    lessons: [
+      "Learned how to combine deterministic financial logic with AI reasoning to build reliable AI-powered business automation",
+      "Gained practical experience processing unstructured financial documents and converting them into validated structured data",
+      "Learned that AI should support financial auditing by investigating and explaining discrepancies while deterministic code handles monetary calculations",
+      "Developed a deeper understanding of reconciliation workflows and how multiple business data sources can be combined to establish a financial source of truth",
+      "Learned how carrier-specific pricing rules can be modeled as structured business logic instead of hard-coded assumptions",
+      "Gained experience designing AI workflows that provide evidence and reasoning rather than simply returning classifications or predictions",
+      "Learned how to design human-in-the-loop systems for workflows involving financial decisions and external communication",
+      "Developed a better understanding of how AI agents can move beyond analysis into operational workflows such as dispute generation and recovery tracking",
+      "Learned the importance of auditability and traceability when building software that handles financial information",
+      "Learned how vertical-specific AI products can create more focused value by solving an expensive business problem end-to-end rather than providing a generic AI capability",
+    ],
+    gallery: [],
+    links: [
+      { label: "Source Code", href: "#" }, // Confidential
+      { label: "Live Project", href: "https://ai-auditflow.vercel.app/" }, // Confidential
+    ],
+  },
+  {
+    show: 1,
     slug: "align-ai",
     image: jobAlignAi.src,
     title: "Align AI",
@@ -88,7 +234,7 @@ export const projects: Project[] = [
     year: "2025",
     featured: false,
     link: "https://jobalign-ai.vercel.app/",
-    number: "01",
+    number: "02",
     technologies: [
       {
         category: "Frontend",
@@ -201,7 +347,7 @@ export const projects: Project[] = [
     ],
     links: [
       { label: "Source Code", href: "#" }, // Confidential
-      { label: "Live Project", href: "#" }, // Confidential
+      { label: "Live Project", href: "https://jobalign-ai.vercel.app/" }, // Confidential
     ],
   },
   {
@@ -217,7 +363,7 @@ export const projects: Project[] = [
     year: "2024",
     featured: false,
     link: "#",
-    number: "02",
+    number: "03",
     technologies: [
       { category: "Frontend", items: ["JavaScript", "HTML", "CSS"] },
       { category: "Backend", items: ["Python", "Flask", "SQLAlchemy"] },
@@ -251,26 +397,206 @@ export const projects: Project[] = [
       "Balancing AI autonomy with data security requires careful architectural design",
     ],
     gallery: [
-      {
-        type: "image-text",
-        src: "",
-        alt: "QueryGenius AI dashboard",
-        caption: "Natural language query interface",
-        text: "Users type questions in natural English. The AI reads only the database structure (tables and columns) to generate secure SQL queries without accessing actual data.",
-      },
-      {
-        type: "image-text",
-        src: "",
-        alt: "Generated visualizations",
-        caption: "Interactive data visualizations",
-        text: "Query results are automatically processed and displayed as interactive graphs using Matplotlib, Seaborn, and Plotly, providing immediate visual insights.",
-      },
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "QueryGenius AI dashboard",
+      //   caption: "Natural language query interface",
+      //   text: "Users type questions in natural English. The AI reads only the database structure (tables and columns) to generate secure SQL queries without accessing actual data.",
+      // },
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "Generated visualizations",
+      //   caption: "Interactive data visualizations",
+      //   text: "Query results are automatically processed and displayed as interactive graphs using Matplotlib, Seaborn, and Plotly, providing immediate visual insights.",
+      // },
     ],
     links: [
       { label: "Source Code", href: "#" }, // Confidential
       { label: "Live Project", href: "#" }, // Confidential
     ],
     confidential: 1, // Flag to indicate this is a work project
+  },
+  {
+    show: 0,
+    slug: "nexahome-ai",
+    image: nexahomeAi.src,
+    title: "NexaHome AI",
+    subtitle: "Unified IoT Control, Energy Monitoring & Smart Home Automation",
+  
+    description:
+      "An AI-powered smart home platform that connects IoT devices across different ecosystems into a single control interface, monitors energy consumption, and enables intelligent automations based on time, temperature, schedules, and device conditions.",
+  
+    category: "product",
+  
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "IoT",
+      "AI",
+      "REST APIs",
+      "Smart Home",
+      "Energy Monitoring",
+    ],
+  
+    year: "2026",
+  
+    featured: false,
+  
+    link: "https://ai-nexahome.vercel.app/",
+  
+    number: "04",
+  
+    technologies: [
+      {
+        category: "Frontend",
+        items: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      },
+  
+      {
+        category: "Backend",
+        items: ["Node.js", "REST APIs"],
+      },
+  
+      {
+        category: "IoT",
+        items: [
+          "IoT Device Integration",
+          "Device APIs",
+          "Smart Home Protocols",
+        ],
+      },
+  
+      {
+        category: "Automation",
+        items: [
+          "Rule-Based Automation",
+          "Scheduled Actions",
+          "Temperature Triggers",
+        ],
+      },
+  
+      {
+        category: "Analytics",
+        items: [
+          "Energy Monitoring",
+          "Power Consumption Tracking",
+          "Usage Analytics",
+        ],
+      },
+    ],
+  
+    overview:
+      "NexaHome AI is a centralized smart home management platform designed to bring IoT devices from different ecosystems into a single interface. Instead of controlling devices through separate manufacturer applications, users can connect and manage their devices from one dashboard. The platform also monitors electricity consumption across connected devices and provides daily, weekly, and monthly usage insights. Users can create intelligent automations that control devices based on schedules, temperature conditions, specific days, and other configurable triggers.",
+  
+    role: [
+      "Designed and developed the unified IoT device management interface",
+  
+      "Built the dashboard for monitoring and controlling connected smart devices",
+  
+      "Designed the device integration architecture for managing IoT devices across different platforms",
+  
+      "Implemented energy consumption tracking for connected devices",
+  
+      "Created daily, weekly, and monthly electricity usage analytics",
+  
+      "Built automation workflows based on time, temperature, schedules, and device conditions",
+  
+      "Designed configurable automation rules that allow users to determine when devices should start or stop",
+  
+      "Implemented device grouping and centralized control for multiple IoT devices",
+  
+      "Designed the user experience for managing connected devices, energy usage, and automations from a single platform",
+  
+      "Focused on creating a scalable architecture capable of supporting multiple IoT ecosystems",
+    ],
+  
+    challenges: [
+      "Creating a unified interface for IoT devices that may use different APIs and communication protocols",
+  
+      "Designing a device abstraction layer so different manufacturers can be controlled consistently",
+  
+      "Handling differences in device capabilities, states, and available controls across platforms",
+  
+      "Calculating and presenting meaningful electricity consumption data across different devices",
+  
+      "Designing reliable automation rules that respond correctly to time, temperature, and schedule conditions",
+  
+      "Preventing conflicting automation rules from attempting to control the same device simultaneously",
+  
+      "Keeping device states synchronized between the physical devices and the centralized dashboard",
+  
+      "Designing the system to remain scalable as users add more devices and integrations",
+    ],
+  
+    lessons: [
+      "Learned how to design centralized control systems for heterogeneous IoT devices",
+  
+      "Gained a deeper understanding of integrating external device APIs into a unified application",
+  
+      "Learned the importance of abstraction layers when working with devices from different ecosystems",
+  
+      "Developed a better understanding of energy consumption monitoring and usage analytics",
+  
+      "Learned how event-driven automation can be combined with schedules and environmental conditions",
+  
+      "Gained experience designing automation systems that need to handle conflicting rules and device states",
+  
+      "Learned how to design dashboards that turn raw IoT data into useful information for everyday users",
+    ],
+  
+    gallery: [
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "NexaHome AI smart home dashboard",
+      //   caption: "Unified smart home dashboard",
+  
+      //   text:
+      //     "NexaHome AI brings connected devices from different ecosystems into one centralized dashboard. Users can view device status, control individual devices, and organize their smart home without switching between multiple manufacturer applications.",
+      // },
+  
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "NexaHome AI energy monitoring dashboard",
+      //   caption: "Energy consumption monitoring",
+  
+      //   text:
+      //     "The energy dashboard provides users with daily, weekly, and monthly electricity consumption insights, helping them understand which connected devices consume the most power and how their usage changes over time.",
+      // },
+  
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "NexaHome AI automation builder",
+      //   caption: "Smart automation builder",
+  
+      //   text:
+      //     "Users can create custom automations that control devices according to time, temperature, selected days, and other conditions. Automations can determine when devices should start, stop, or change their state automatically.",
+      // },
+  
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "NexaHome AI connected devices",
+      //   caption: "Connected device management",
+  
+      //   text:
+      //     "Connected IoT devices can be grouped and managed from a single interface, giving users centralized control over their smart home ecosystem.",
+      // },
+    ],
+  
+    links: [
+      { label: "Source Code", href: "#" },
+      { label: "Live Project", href: "#" },
+    ],
+  
+    confidential: 1,
   },
   {
     show: 0,
@@ -285,7 +611,7 @@ export const projects: Project[] = [
     year: "2024",
     featured: false,
     link: "#", // Confidential project
-    number: "03",
+    number: "05",
     technologies: [
       { category: "Frontend", items: ["React", "Redux", "CSS"] },
       { category: "Backend", items: ["Python", "AWS Lambda", "API Gateway"] },
@@ -320,20 +646,20 @@ export const projects: Project[] = [
       "Understanding user workflows helps design better document processing pipelines",
     ],
     gallery: [
-      {
-        type: "image-text",
-        src: "",
-        alt: "Document upload and processing",
-        caption: "AI-powered document processing",
-        text: "Users upload documents (PDFs or images). The system extracts text using Tesseract OCR, processes it through AI models, and structures financial data like vendor names, dates, and totals.",
-      },
-      {
-        type: "image-text",
-        src: "",
-        alt: "Dashboard and history view",
-        caption: "Document history dashboard",
-        text: "Processed documents are stored in MySQL and can be viewed in a detailed history dashboard. Users can reprocess files and open them directly in the app.",
-      },
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "Document upload and processing",
+      //   caption: "AI-powered document processing",
+      //   text: "Users upload documents (PDFs or images). The system extracts text using Tesseract OCR, processes it through AI models, and structures financial data like vendor names, dates, and totals.",
+      // },
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "Dashboard and history view",
+      //   caption: "Document history dashboard",
+      //   text: "Processed documents are stored in MySQL and can be viewed in a detailed history dashboard. Users can reprocess files and open them directly in the app.",
+      // },
     ],
     links: [
       { label: "Source Code", href: "#" }, // Confidential
@@ -354,7 +680,7 @@ export const projects: Project[] = [
     year: "2024",
     featured: false,
     link: "#", // Confidential project
-    number: "04",
+    number: "06",
     technologies: [
       { category: "Frontend", items: ["HTML", "CSS", "JavaScript", "Bootstrap"] },
       { category: "Backend", items: ["Python", "Flask"] },
@@ -386,20 +712,20 @@ export const projects: Project[] = [
       "Understanding user flow helped design more intuitive voice interfaces",
     ],
     gallery: [
-      {
-        type: "image-text",
-        src: "",
-        alt: "LinguaVox AI recording interface",
-        caption: "Voice recording and transcription interface",
-        text: "Users can start/stop recording with a simple UI. Audio is captured and sent to the backend for processing with OpenAI Whisper.",
-      },
-      {
-        type: "image-text",
-        src: "",
-        alt: "Multilingual transcription support",
-        caption: "Supporting multiple languages",
-        text: "The app supports Malayalam, Hindi, English, Japanese, Korean, and more, making voice search accessible across diverse linguistic backgrounds.",
-      },
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "LinguaVox AI recording interface",
+      //   caption: "Voice recording and transcription interface",
+      //   text: "Users can start/stop recording with a simple UI. Audio is captured and sent to the backend for processing with OpenAI Whisper.",
+      // },
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "Multilingual transcription support",
+      //   caption: "Supporting multiple languages",
+      //   text: "The app supports Malayalam, Hindi, English, Japanese, Korean, and more, making voice search accessible across diverse linguistic backgrounds.",
+      // },
     ],
     links: [
       { label: "Source Code", href: "#" }, // Confidential
@@ -420,7 +746,7 @@ export const projects: Project[] = [
     year: "2024",
     featured: false,
     link: "#",
-    number: "05",
+    number: "07",
     technologies: [
       { category: "Frontend", items: ["HTML", "CSS", "JavaScript"] },
       { category: "Backend", items: ["Python", "Flask"] },
@@ -453,20 +779,20 @@ export const projects: Project[] = [
       "Understanding visual similarity metrics helps build better AI evaluation tools",
     ],
     gallery: [
-      {
-        type: "image-text",
-        src: "",
-        alt: "VisionMatch AI upload interface",
-        caption: "Reference image upload and prompt input",
-        text: "Users upload a reference image and provide a text prompt describing the desired modifications. The AI generates a new image based on both inputs.",
-      },
-      {
-        type: "image-text",
-        src: "",
-        alt: "Similarity comparison results",
-        caption: "AI-generated image comparison",
-        text: "The generated image is compared against multiple reference images. Similarity percentages are calculated, and the closest match is highlighted for the user.",
-      },
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "VisionMatch AI upload interface",
+      //   caption: "Reference image upload and prompt input",
+      //   text: "Users upload a reference image and provide a text prompt describing the desired modifications. The AI generates a new image based on both inputs.",
+      // },
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "Similarity comparison results",
+      //   caption: "AI-generated image comparison",
+      //   text: "The generated image is compared against multiple reference images. Similarity percentages are calculated, and the closest match is highlighted for the user.",
+      // },
     ],
     links: [
       { label: "Source Code", href: "#" },
@@ -487,7 +813,7 @@ export const projects: Project[] = [
     year: "2024",
     featured: true,
     link: "https://ztwebapp.vercel.app/",
-    number: "06",
+    number: "08",
     technologies: [
       { category: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"] },
       { category: "Backend", items: ["Supabase", "PostgreSQL", "Edge Functions"] },
@@ -514,12 +840,12 @@ export const projects: Project[] = [
       "Edge functions are ideal for lightweight personalization logic",
     ],
     gallery: [
-      {
-        type: "feature",
-        src: "",
-        alt: "Zing Tongue learning interface",
-        caption: "Interactive vocabulary challenges",
-      },
+      // {
+      //   type: "feature",
+      //   src: "",
+      //   alt: "Zing Tongue learning interface",
+      //   caption: "Interactive vocabulary challenges",
+      // },
     ],
     links: [
       { label: "Live Project", href: "#" },
@@ -539,7 +865,7 @@ export const projects: Project[] = [
     year: "2024",
     featured: true,
     link: "http://ahomeazen.co.in/",
-    number: "07",
+    number: "09",
     technologies: [
       { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Three.js / Canvas"] },
       { category: "Backend", items: ["Node.js", "Express", "REST API"] },
@@ -566,17 +892,17 @@ export const projects: Project[] = [
       "Location intelligence tools greatly impact user decision-making when presenting real estate data",
     ],
     gallery: [
-      {
-        type: "feature",
-        src: "",
-        alt: "Home Zen interactive 3D interior design software canvas",
-        caption: "3D room layout planner with multi-retailer furniture price comparison",
-      },
-      {
-        type: "two",
-        alt: "Home Zen property listings and neighborhood amenity map",
-        caption: "Property marketplace and surrounding amenities map",
-      },
+      // {
+      //   type: "feature",
+      //   src: "",
+      //   alt: "Home Zen interactive 3D interior design software canvas",
+      //   caption: "3D room layout planner with multi-retailer furniture price comparison",
+      // },
+      // {
+      //   type: "two",
+      //   alt: "Home Zen property listings and neighborhood amenity map",
+      //   caption: "Property marketplace and surrounding amenities map",
+      // },
     ],
     links: [
       { label: "Live Project", href: "http://ahomeazen.co.in/" },
@@ -595,7 +921,7 @@ export const projects: Project[] = [
     year: "2026",
     featured: true,
     link: "https://comfypets.vercel.app/",
-    number: "08",
+    number: "10",
     technologies: [
       { category: "Frontend (Web)", items: ["Next.js", "React", "Tailwind CSS"] },
       { category: "Mobile", items: ["React Native", "Expo"] },
@@ -625,27 +951,27 @@ export const projects: Project[] = [
       "Mobile-first thinking applies to brand experience, not just layout",
     ],
     gallery: [
-      {
-        type: "image-text",
-        src: "",
-        alt: "Comfy Pets landing page",
-        caption: "Boarding pass inspired hero section",
-        text: "The landing page captures the brand's 'all species welcome' ethos with a ticket stub metaphor — a visual identity that immediately communicates journey, care, and inclusivity.",
-      },
-      {
-        type: "image-text",
-        src: "",
-        alt: "Species grid and services",
-        caption: "Species-first design approach",
-        text: "The species grid prominently features every animal type, making it clear from the first interaction that this platform is for all pets, not just traditional ones.",
-      },
-      {
-        type: "image-text",
-        src: "",
-        alt: "Mobile app interface",
-        caption: "React Native mobile experience",
-        text: "The app maintains the same boarding pass aesthetic with adapted UI patterns for mobile — stamp badges, ticket stubs, and species icons translate beautifully to smaller screens.",
-      },
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "Comfy Pets landing page",
+      //   caption: "Boarding pass inspired hero section",
+      //   text: "The landing page captures the brand's 'all species welcome' ethos with a ticket stub metaphor — a visual identity that immediately communicates journey, care, and inclusivity.",
+      // },
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "Species grid and services",
+      //   caption: "Species-first design approach",
+      //   text: "The species grid prominently features every animal type, making it clear from the first interaction that this platform is for all pets, not just traditional ones.",
+      // },
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "Mobile app interface",
+      //   caption: "React Native mobile experience",
+      //   text: "The app maintains the same boarding pass aesthetic with adapted UI patterns for mobile — stamp badges, ticket stubs, and species icons translate beautifully to smaller screens.",
+      // },
     ],
     links: [
       { label: "Live Website", href: "https://comfy-pets.com" },
@@ -667,7 +993,7 @@ export const projects: Project[] = [
     year: "2023",
     featured: false,
     link: "https://nanami-site.vercel.app/",
-    number: "09",
+    number: "11",
     technologies: [
       { category: "Frontend", items: ["Next.js", "React", "Framer Motion", "Tailwind CSS"] },
       { category: "CMS", items: ["Contentful"] },
@@ -707,7 +1033,7 @@ export const projects: Project[] = [
     year: "2023",
     featured: true,
     link: "https://s-lib.vercel.app/",
-    number: "10",
+    number: "12",
     technologies: [
       { category: "Frontend", items: ["Vue.js", "Pinia", "Tailwind CSS"] },
       { category: "Backend", items: ["Firebase", "Firestore"] },
@@ -732,13 +1058,13 @@ export const projects: Project[] = [
       "The best feature is the one the user never has to think about",
     ],
     gallery: [
-      {
-        type: "image-text",
-        src: "",
-        alt: "Slib library view",
-        caption: "Clean catalog view with smart categorization",
-        text: "The interface strips away everything except what matters: your books, organized your way.",
-      },
+      // {
+      //   type: "image-text",
+      //   src: "",
+      //   alt: "Slib library view",
+      //   caption: "Clean catalog view with smart categorization",
+      //   text: "The interface strips away everything except what matters: your books, organized your way.",
+      // },
     ],
     links: [
       { label: "Live Project", href: "#" },
@@ -758,7 +1084,7 @@ export const projects: Project[] = [
     year: "2024",
     featured: false,
     link: "https://github.com/shreyaDeb/Break-Time-Bliss",
-    number: "11",
+    number: "13",
     technologies: [
       { category: "Frontend", items: ["Tkinter"] },
       { category: "Backend", items: ["Python", "Threading"] },

@@ -1,294 +1,234 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import Link from "next/link";
 import { ContentContainer } from "@/components/layout";
 import { Reveal } from "@/components/motion";
 
-/* ─── Animation variants ─── */
+const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/shreyadeb",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/shreyadeb",
+  },
+];
+
 const stagger = {
   hidden: {},
   visible: {
     transition: {
       staggerChildren: 0.1,
-      delayChildren: 0.15,
+      delayChildren: 0.1,
     },
   },
 };
 
-const itemFadeUp = {
-  hidden: { opacity: 0, y: 20 },
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 18,
+  },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.7,
       ease: [0.25, 0.1, 0.25, 1] as const,
     },
   },
 };
 
-/* ─── Contact options data ─── */
-const contactOptions = [
-  {
-    label: "EMAIL",
-    description: "The most direct way to reach me. I read every message.",
-    href: "mailto:shreya.deb@icloud.com",
-    external: false,
-  },
-  {
-    label: "LINKEDIN",
-    description: "Professional updates and networking.",
-    href: "https://linkedin.com/in/shreyadeb",
-    external: true,
-  },
-  {
-    label: "GITHUB",
-    description: "Open source work and side projects.",
-    href: "https://github.com/shreyadeb",
-    external: true,
-  },
-];
-
-/* ─── Subtle animated visual ─── */
-function ContactVisual() {
-  const shouldReduceMotion = useReducedMotion();
-
-  return (
-    <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64">
-      <svg
-        viewBox="0 0 400 400"
-        className="w-full h-full"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        {/* Outer ring */}
-        <motion.circle
-          cx="200"
-          cy="200"
-          r="160"
-          stroke="var(--border)"
-          strokeWidth="1"
-          initial={shouldReduceMotion ? {} : { pathLength: 0, opacity: 0 }}
-          animate={
-            shouldReduceMotion
-              ? {}
-              : { pathLength: 1, opacity: 1, transition: { duration: 1.4, ease: "easeInOut" } }
-          }
-        />
-
-        {/* Middle ring — dashed, rotating */}
-        <motion.circle
-          cx="200"
-          cy="200"
-          r="120"
-          stroke="var(--muted-foreground)"
-          strokeWidth="0.5"
-          strokeDasharray="8 12"
-          initial={shouldReduceMotion ? {} : { pathLength: 0, opacity: 0 }}
-          animate={
-            shouldReduceMotion
-              ? {}
-              : {
-                pathLength: 1,
-                opacity: 0.4,
-                transition: { duration: 1.6, ease: "easeInOut", delay: 0.2 },
-                rotate: 360,
-              }
-          }
-          style={{ transformOrigin: "200px 200px" }}
-        />
-
-        {/* Inner ring */}
-        <motion.circle
-          cx="200"
-          cy="200"
-          r="70"
-          stroke="var(--accent)"
-          strokeWidth="1.5"
-          initial={shouldReduceMotion ? {} : { pathLength: 0, opacity: 0 }}
-          animate={
-            shouldReduceMotion
-              ? {}
-              : {
-                pathLength: 1,
-                opacity: 0.6,
-                transition: { duration: 1.2, ease: "easeInOut", delay: 0.4 },
-              }
-          }
-        />
-
-        {/* Center dot */}
-        <motion.circle
-          cx="200"
-          cy="200"
-          r="3"
-          fill="var(--foreground)"
-          initial={shouldReduceMotion ? {} : { scale: 0, opacity: 0 }}
-          animate={
-            shouldReduceMotion
-              ? {}
-              : { scale: 1, opacity: 1, transition: { duration: 0.5, delay: 0.8, ease: "easeOut" } }
-          }
-        />
-      </svg>
-    </div>
-  );
-}
-
 export default function ContactPage() {
   return (
-    <ContentContainer className="py-24">
-      {/* ─── HERO ─── */}
-      {/* <motion.div
-        className="mb-20 lg:mb-28"
-        initial="hidden"
-        animate="visible"
-        variants={stagger}
-      >
-        <motion.div variants={itemFadeUp} className="flex items-center gap-4 mb-8">
-          <span className="w-6 h-px bg-foreground/30" aria-hidden="true" />
-          <span className="text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground">
+    <ContentContainer className="!py-16 sm:!py-20 lg:!py-28">
+      {/* ─────────────────────────────────────────
+          PAGE HEADER
+      ───────────────────────────────────────── */}
+      <Reveal>
+        <div className="flex items-center justify-center !gap-4">
+          <span
+            className="h-px w-6 bg-foreground/25"
+            aria-hidden="true"
+          />
+
+          <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground">
             Contact
           </span>
+
+          <span
+            className="h-px w-6 bg-foreground/25"
+            aria-hidden="true"
+          />
+        </div>
+      </Reveal>
+
+      {/* ─────────────────────────────────────────
+          MAIN CONTENT
+      ───────────────────────────────────────── */}
+      <motion.main
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          margin: "-80px",
+        }}
+        variants={stagger}
+        className="!mx-auto !mt-16 max-w-4xl text-center sm:!mt-20 lg:!mt-24"
+      >
+        {/* Heading */}
+        <motion.div variants={fadeUp}>
+          <h1 className="font-display text-5xl font-semibold leading-[1.02] tracking-[-0.04em] text-foreground sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+            Let&apos;s build something
+            <br />
+            <span className="text-accent">together.</span>
+          </h1>
         </motion.div>
 
-        <motion.h1
-          variants={itemFadeUp}
-          className="font-display text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-foreground leading-[1.08] mb-6"
-        >
-          Let&apos;s build something.
-        </motion.h1>
-
-        <motion.p
-          variants={itemFadeUp}
-          className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl"
-        >
-          Have a product idea, interesting problem, or opportunity? I&apos;d
-          love to hear about it.
-        </motion.p>
-      </motion.div> */}
-
-      <section className="relative min-h-[50vh] flex items-center !pt-3 !pb-16 lg:!pb-24 overflow-hidden">
-        <Reveal>
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-6">
-              <span className="w-6 h-px bg-foreground/30" aria-hidden="true" />
-              <p className="text-xs font-medium tracking-[0.25em] uppercase text-muted-foreground">
-                Contact
-              </p>
-            </div>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.1] mb-6">
-              Let's build something.
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              Have a product idea, interesting problem, or opportunity? I&apos;d
-              love to hear about it.
-            </p>
-          </div>
-        </Reveal>
-      </section>
-
-      {/* ─── CONTENT GRID ─── */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        {/* Contact options */}
-        <motion.div
-          className="lg:col-span-7 space-y-0"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={stagger}
-        >
-          {contactOptions.map((option) => (
-            <motion.div key={option.label} variants={itemFadeUp}>
-              <a
-                href={option.href}
-                target={option.external ? "_blank" : undefined}
-                rel={option.external ? "noopener noreferrer" : undefined}
-                className="group block border-t border-border py-8 first:border-t-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-              >
-                <div className="flex items-start justify-between gap-6">
-                  <div className="flex-1 min-w-0">
-                    <span className="text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground block mb-2">
-                      {option.label}
-                    </span>
-                    <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
-                      {option.description}
-                    </p>
-                  </div>
-                  <span className="flex-shrink-0 mt-1 text-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M5 15L15 5M15 5H8M15 5V12"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </a>
-            </motion.div>
-          ))}
+        {/* Description */}
+        <motion.div variants={fadeUp} className="!mx-auto !mt-8 max-w-2xl">
+          <p className="text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+            Have an idea, interesting problem, or opportunity?
+            <br className="hidden sm:block" />
+            I&apos;d love to hear about it.
+          </p>
         </motion.div>
 
-        {/* Visual + email highlight */}
+        {/* ─────────────────────────────────────
+            EMAIL CTA
+        ───────────────────────────────────── */}
         <motion.div
-          className="lg:col-span-5 flex flex-col items-center lg:items-start gap-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={stagger}
+          variants={fadeUp}
+          className="!mx-auto !mt-14 max-w-2xl sm:!mt-16"
         >
-          {/* Visual element */}
-          <motion.div variants={itemFadeUp} className="flex justify-center lg:justify-start">
-            <ContactVisual />
-          </motion.div>
+          <span className="!mb-4 block text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground/55">
+            Get in touch
+          </span>
 
-          {/* Email highlight */}
-          <motion.div variants={itemFadeUp} className="text-center lg:text-left">
-            <span className="text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground block mb-3">
-              Or email directly
-            </span>
-            <a
-              href="mailto:shreya.deb@icloud.com"
-              className="group inline-flex items-center gap-2 text-lg sm:text-xl font-medium text-foreground hover:text-accent transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-            >
-              <span className="border-b border-foreground/20 group-hover:border-accent transition-colors duration-300 pb-0.5">
+          <a
+            href="mailto:shreya.deb@icloud.com"
+            className="group relative !mx-auto flex items-center justify-between gap-5 border-y border-border px-1 py-6 text-left transition-colors duration-500 hover:border-foreground/30 sm:px-3 sm:py-7"
+          >
+            {/* Left side */}
+            <div className="min-w-0 flex-1">
+              <span className="block break-all text-xl font-medium tracking-tight text-foreground transition-transform duration-500 ease-out group-hover:translate-x-1 sm:break-normal sm:text-2xl md:text-3xl">
                 shreya.deb@icloud.com
               </span>
+
+              {/* Animated underline */}
+              {/* <span className="relative !mt-2 block h-px w-full overflow-hidden">
+                <span className="absolute inset-y-0 left-0 w-full bg-border" />
+
+                <span className="absolute inset-y-0 left-0 w-full origin-left scale-x-0 bg-accent transition-transform duration-500 ease-out group-hover:scale-x-100" />
+              </span> */}
+            </div>
+
+            {/* Arrow circle */}
+            <span className="relative flex h-11 w-11 flex-shrink-0 items-center justify-center overflow-hidden rounded-full border border-border text-foreground transition-all duration-500 group-hover:border-accent group-hover:bg-accent group-hover:text-background sm:h-12 sm:w-12">
+              <span className="absolute inset-0 scale-0 rounded-full bg-accent transition-transform duration-500 ease-out group-hover:scale-100" />
+
               <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
+                width="17"
+                height="17"
+                viewBox="0 0 17 17"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 aria-hidden="true"
+                className="relative z-10 transition-transform duration-500 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               >
                 <path
-                  d="M4 12L12 4M12 4H7M12 4V9"
+                  d="M4 13L13 4M13 4H7M13 4V10"
                   stroke="currentColor"
-                  strokeWidth="1.5"
+                  strokeWidth="1.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
               </svg>
-            </a>
-            <p className="text-sm text-muted-foreground mt-2">
-              I typically respond within 24 hours.
-            </p>
-          </motion.div>
+            </span>
+          </a>
+
+          <p className="!mt-4 text-xs text-muted-foreground/60">
+            I typically respond within 24 hours.
+          </p>
         </motion.div>
-      </div>
+
+        {/* ─────────────────────────────────────
+            SOCIAL LINKS
+        ───────────────────────────────────── */}
+        <motion.div
+          variants={fadeUp}
+          className="!mt-16 sm:!mt-20"
+        >
+          <div className="!mx-auto flex max-w-md items-center justify-center !gap-5">
+            {socialLinks.map((link, index) => (
+              <div key={link.label} className="flex items-center !gap-5">
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center !gap-2 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                >
+                  <span className="relative">
+                    {link.label}
+
+                    <span className="absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-accent transition-transform duration-300 ease-out group-hover:origin-left group-hover:scale-x-100" />
+                  </span>
+
+                  <span className="text-xs text-muted-foreground/50 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent">
+                    ↗
+                  </span>
+                </a>
+
+                {index < socialLinks.length - 1 && (
+                  <span
+                    className="h-3 w-px bg-border"
+                    aria-hidden="true"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </motion.main>
+
+      {/* ─────────────────────────────────────────
+          FOOTER
+      ───────────────────────────────────────── */}
+      <motion.footer
+        initial={{
+          opacity: 0,
+        }}
+        whileInView={{
+          opacity: 1,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          duration: 0.6,
+          delay: 0.2,
+        }}
+        className="!mx-auto !mt-24 max-w-4xl border-t border-border !pt-6 sm:!mt-32"
+      >
+        <div className="flex flex-col items-center justify-between !gap-4 text-center sm:flex-row sm:text-left">
+          <p className="text-xs text-muted-foreground/60">
+            Thanks for stopping by.
+          </p>
+
+          <Link
+            href="/work"
+            className="group inline-flex items-center !gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground transition-colors duration-300 hover:text-foreground"
+          >
+            <span>Explore my work</span>
+
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
+          </Link>
+        </div>
+      </motion.footer>
     </ContentContainer>
   );
 }
