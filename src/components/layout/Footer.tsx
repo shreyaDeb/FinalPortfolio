@@ -41,6 +41,12 @@ export function Footer() {
               EXPERIMENTS
             </Link>
             <Link
+              href="/certifications"
+              className="text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            >
+              CERTIFICATIONS
+            </Link>
+            <Link
               href="/contact"
               className="text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
