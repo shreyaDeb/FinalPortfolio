@@ -15,6 +15,9 @@ import Agent3 from "../images/Agent33.png"
 import Agent4 from "../images/Agent44.png"
 import auditFlowAI from "../images/AFAI.png"
 import nexahomeAi from "../images/NexaHomeAI.png"
+import ArenaAI from "../images/ArenaAI.png"
+import suryaProject from "../images/Surya.png"
+import aureliaAi from "../images/AureliaAI.png"
 export type ProjectCategory = "product" | "experiment" | "case-study";
 
 export interface Technology {
@@ -66,6 +69,244 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    show: 1,
+    slug: "surya-project",
+    image: suryaProject.src,
+    title: "Surya Project",
+    subtitle: "Solar Energy Monitoring & Inverter Analytics Platform",
+    description:
+      "A solar energy monitoring platform that integrates with inverter data APIs to retrieve, process, and organize photovoltaic generation data, enabling users to monitor solar production, analyze daily performance, and build a foundation for deeper renewable-energy analytics.",
+    category: "product",
+    tags: [
+      "JavaScript",
+      "Node.js",
+      "REST APIs",
+      "Solar Energy",
+      "Solar Monitoring",
+      "Inverter Data",
+      "SolisCloud API",
+      "API Integration",
+      "Data Processing",
+      "Energy Analytics",
+      "Automation",
+      "JSON",
+    ],
+    year: "2026",
+    featured: false,
+    link: "https://ai-surya.vercel.app/",
+    number: "04",
+    technologies: [
+      {
+        category: "Backend",
+        items: ["Node.js", "JavaScript"],
+      },
+      {
+        category: "API Integration",
+        items: [
+          "SolisCloud API",
+          "REST API",
+          "Authenticated API Requests",
+          "HMAC/Signature Authentication",
+        ],
+      },
+      {
+        category: "Solar Data",
+        items: [
+          "Inverter Data",
+          "Daily Generation",
+          "Energy Monitoring",
+          "Solar Production",
+          "Performance Data",
+        ],
+      },
+      {
+        category: "Data Processing",
+        items: [
+          "JSON",
+          "Response Parsing",
+          "Data Transformation",
+          "Structured Data Storage",
+        ],
+      },
+      {
+        category: "Automation",
+        items: [
+          "Automated Data Retrieval",
+          "API Polling",
+          "Data Collection",
+          "Historical Data Processing",
+        ],
+      },
+    ],
+    overview:
+      "Surya Project is a solar energy monitoring and inverter-data integration project focused on connecting solar infrastructure with software systems. The project integrates with the SolisCloud API to securely retrieve inverter and daily generation information, processes the API responses, and converts the returned data into structured information that can be stored and consumed by applications. The system handles authenticated API communication, request signing, content-type requirements, response processing, and structured JSON output. The project provides the foundation for monitoring solar production and inverter performance programmatically rather than relying exclusively on manual access to an external monitoring platform. Its architecture can be extended with historical storage, dashboards, performance analytics, reporting, and automated solar-generation insights.",
+    role: [
+      "Designed and developed the integration between the application and the SolisCloud inverter API",
+      "Implemented authenticated requests for retrieving solar inverter and generation data",
+      "Worked with the API's request-signing and authentication requirements",
+      "Implemented the inverter daily-data retrieval workflow",
+      "Handled API request headers and content-type requirements to ensure successful communication with the external service",
+      "Processed and parsed API responses into structured application data",
+      "Designed JSON-based output for storing and consuming retrieved inverter information",
+      "Built the foundation for automated solar-generation data collection",
+      "Designed the data flow required to retrieve inverter information without manually accessing the external monitoring dashboard",
+      "Structured the integration so additional inverter endpoints and solar metrics can be incorporated later",
+      "Designed the project with future historical storage and analytics in mind",
+      "Worked with external API behavior and debugging to identify request-format requirements that were not immediately obvious from the integration",
+    ],
+    challenges: [
+      "Understanding and implementing the authentication and request-signing requirements of an external solar inverter API",
+      "Debugging requests where small differences in headers and content type affected whether the API accepted the request",
+      "Working with externally defined API response structures and converting them into application-friendly data",
+      "Handling authentication secrets without exposing sensitive API credentials in application code",
+      "Designing the integration so additional inverter and energy endpoints can be added without duplicating request logic",
+      "Creating a reliable data pipeline for retrieving information from an external service that the application does not control",
+      "Determining how raw inverter responses should be structured for later storage, visualization, and analytics",
+      "Designing the foundation for historical solar data while keeping the initial implementation focused on reliable API integration",
+    ],
+    lessons: [
+      "Learned how to integrate third-party APIs that require custom authentication and request-signing mechanisms",
+      "Gained practical experience debugging API integrations where headers and request formatting directly affect authentication and response behavior",
+      "Learned how to transform external API responses into structured JSON data suitable for application workflows",
+      "Developed a better understanding of the challenges involved in integrating software with physical infrastructure and IoT-style data sources",
+      "Learned the importance of separating API integration logic from application-level data processing",
+      "Gained experience designing integrations so additional endpoints and data sources can be introduced without rewriting the core communication layer",
+      "Learned how reliable data collection is the foundation for building useful monitoring and analytics systems",
+      "Developed a deeper understanding of how renewable-energy data can be exposed through software for future monitoring, reporting, and analysis",
+    ],
+    gallery: [],
+    links: [
+      { label: "Source Code", href: "#" },
+      { label: "Live Project", href: "#" },
+    ],
+  },
+  {
+    show: 1,
+    slug: "arena-ai",
+    image: ArenaAI.src,
+    title: "Arena AI",
+    subtitle: "AI-Powered Competitor Pricing & Market Intelligence Platform",
+    description:
+      "An AI-powered competitive intelligence platform that monitors competitor products, prices, stock availability, and promotional activity to help businesses understand market changes, identify pricing gaps, and make faster competitive decisions.",
+    category: "product",
+    tags: [
+      "Next.js",
+      "React",
+      "AI Agents",
+      "LLM",
+      "Competitive Intelligence",
+      "Price Monitoring",
+      "Competitor Analysis",
+      "Web Monitoring",
+      "Market Intelligence",
+      "E-commerce",
+      "Data Analysis",
+      "Automation",
+      "MySQL",
+    ],
+    year: "2026",
+    featured: false,
+    link: "https://compri-arena-ai.vercel.app/",
+    number: "02",
+    technologies: [
+      {
+        category: "Frontend",
+        items: ["Next.js", "React", "Tailwind CSS"],
+      },
+      {
+        category: "AI & Intelligence",
+        items: [
+          "LLM",
+          "AI Agents",
+          "Competitive Analysis",
+          "Natural Language Insights",
+          "Prompt Engineering",
+        ],
+      },
+      {
+        category: "Competitive Monitoring",
+        items: [
+          "Price Monitoring",
+          "Stock Monitoring",
+          "Promotion Tracking",
+          "Product Monitoring",
+          "Competitor Tracking",
+        ],
+      },
+      {
+        category: "Data Analysis",
+        items: [
+          "Price Comparison",
+          "Price Gap Analysis",
+          "Historical Analysis",
+          "Trend Detection",
+          "Market Intelligence",
+        ],
+      },
+      {
+        category: "Automation",
+        items: [
+          "Automated Monitoring",
+          "Change Detection",
+          "Alert Generation",
+          "Scheduled Monitoring",
+        ],
+      },
+      {
+        category: "Database",
+        items: ["MySQL"],
+      },
+    ],
+    overview:
+      "Arena AI is a competitive pricing and market intelligence platform designed to help businesses understand what competitors are changing across their online product catalogs. The platform monitors competitor products and tracks changes in pricing, stock availability, and promotional activity over time. Instead of presenting businesses with raw scraped information, Arena AI organizes competitive changes into actionable intelligence through dashboards, product comparisons, historical timelines, alerts, analytics, and AI-generated insights. Businesses can monitor competitors, identify products where they are significantly above or below market pricing, detect stock movements, analyze competitive trends, and receive alerts when important changes occur. The platform is designed around continuous competitive monitoring so that businesses can understand not only the current market position but also how that position is changing over time.",
+    role: [
+      "Designed and developed the architecture for an AI-powered competitor intelligence platform",
+      "Designed the product monitoring workflow for tracking competitor products, pricing, stock availability, and promotional activity",
+      "Built the dashboard experience for monitoring competitive market activity across multiple competitors",
+      "Designed product-level competitive comparison views for understanding pricing differences between businesses and competitors",
+      "Implemented concepts for historical price and stock tracking to identify changes over time",
+      "Designed automated change-detection workflows for identifying meaningful competitor activity",
+      "Built alert workflows for notifying users about important pricing, stock, and promotional changes",
+      "Designed AI-powered insight workflows that transform competitive data into business-oriented observations",
+      "Implemented pricing-gap analysis to help businesses identify products where their pricing differs significantly from competitors",
+      "Designed competitor profiles containing monitored products, market activity, and historical competitive information",
+      "Designed analytics views for identifying pricing trends and broader competitive patterns",
+      "Created an extensible architecture that allows additional competitors and monitored products to be added without changing the core workflow",
+      "Designed the system around continuous monitoring rather than one-time competitor research",
+      "Designed the platform as a B2B SaaS product with dashboards, alerts, reporting, and configurable monitoring workflows",
+    ],
+    challenges: [
+      "Designing a monitoring architecture that can support multiple competitors and large product catalogs",
+      "Determining which competitor changes are meaningful enough to surface as alerts instead of overwhelming users with noise",
+      "Handling differences between competitor product names, URLs, product identifiers, and catalog structures",
+      "Designing historical data models that allow pricing and stock changes to be analyzed over time",
+      "Separating raw competitor observations from derived business insights",
+      "Designing pricing-gap calculations that remain useful across products with different pricing structures",
+      "Building an AI insight layer that interprets competitive data without inventing unsupported conclusions",
+      "Designing dashboards that expose large amounts of competitive information without becoming another generic analytics interface",
+      "Determining how monitoring frequency should balance freshness, system resources, and reliability",
+      "Designing alert rules that allow businesses to focus on changes relevant to their own competitive strategy",
+      "Creating a scalable architecture where additional competitive signals can be introduced without redesigning the entire product",
+      "Designing a product that turns competitor monitoring into an ongoing decision-support workflow rather than a collection of scraped pages",
+    ],
+    lessons: [
+      "Learned how competitive intelligence products can combine monitoring, historical data, analytics, and AI reasoning into a single workflow",
+      "Learned that the value of monitoring systems comes from identifying meaningful changes rather than simply collecting more data",
+      "Gained experience designing product-level historical tracking for pricing and availability changes",
+      "Learned how AI can be used to interpret structured competitive data and turn it into business-oriented insights",
+      "Developed a better understanding of alert design and the importance of reducing notification noise",
+      "Learned how competitive pricing information can be transformed into actionable pricing-gap and market-position analysis",
+      "Gained experience designing B2B SaaS workflows around recurring monitoring rather than one-time user actions",
+      "Learned how product architecture must account for continuously changing external data sources",
+      "Developed a deeper understanding of how vertical-specific intelligence products can provide more useful outcomes than generic AI dashboards",
+    ],
+    gallery: [],
+    links: [
+      { label: "Source Code", href: "#" }, // Confidential
+      { label: "Live Project", href: "https://arena-ai.vercel.app/" },
+    ],
+  },
   {
     show: 1,
     slug: "audit-flow-ai",
@@ -211,7 +452,144 @@ export const projects: Project[] = [
     ],
   },
   {
-    show: 1,
+    show: 0,
+    slug: "aurelia-ai",
+    image: aureliaAi.src,
+    title: "Aurelia AI",
+    subtitle: "B2B Social Intelligence & Brand Health Platform",
+    description:
+      "A social intelligence platform that reads public conversations across Reddit, X, news, and review sites — scores every mention for sentiment, detects emerging trends and crisis signals, and turns the raw signal into plain-English intelligence for brand, PR, and strategy teams. Market-agnostic by design: any industry, any region.",
+    category: "product",
+    tags: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Zustand",
+      "Recharts",
+      "Sentiment Analysis",
+      "Social Intelligence",
+      "Trend Detection",
+      "Crisis Detection",
+      "Multi-language",
+      "AI Agent",
+      "Command Palette",
+      "Dashboard Design",
+      "SaaS",
+    ],
+    year: "2026",
+    featured: true,
+    link: "https://ai-aurelia.vercel.app/",
+    number: "05",
+    technologies: [
+      {
+        category: "Frontend",
+        items: [
+          "Next.js (App Router)",
+          "React",
+          "TypeScript",
+          "Tailwind CSS v4",
+          "Server Components",
+          "Client Components",
+        ],
+      },
+      {
+        category: "State & Data",
+        items: [
+          "Zustand",
+          "Mock service layer",
+          "Typed domain model",
+          "React hooks",
+          "localStorage persistence",
+        ],
+      },
+      {
+        category: "Visualization",
+        items: [
+          "Recharts",
+          "Inline SVG charts",
+          "Geographic region heatmaps",
+          "Multi-series sentiment timelines",
+          "Diverging bar charts",
+        ],
+      },
+      {
+        category: "Intelligence",
+        items: [
+          "Sentiment scoring",
+          "Trend velocity",
+          "Crisis detection thresholds",
+          "Entity tracking",
+          "Cross-cultural / multi-language context",
+          "Agent-generated charts",
+        ],
+      },
+      {
+        category: "Product Design",
+        items: [
+          "Design system (light + dark)",
+          "Command palette (⌘K)",
+          "Multi-region sidebar",
+          "Entity detail pages",
+          "Executive weekly brief",
+          "Responsive down to mobile",
+        ],
+      },
+    ],
+    overview:
+      "Aurelia AI is a social intelligence platform built for teams that need to know what their market is saying before it becomes a headline. The product reads public conversations across Reddit, X, news, and review sites, scores every mention for sentiment, and surfaces the shifts that matter — brand health by region, competitor momentum, emerging micro-trends, and crisis signals. Rather than dumping charts on the user, Aurelia translates the signal into language a founder or comms lead can act on, and generates the charts inline when asked. The product is deliberately market-agnostic: it works for any industry, in any region, in 40+ languages. The frontend is designed as a full production-feel SaaS — polished marketing site, auth and onboarding, and a data-dense application shell with a dashboard, live feed, alerts, sentiment, trends, entities, reports, sources, integrations, and settings. Every screen runs on realistic mock data shaped to a service layer that mirrors the API contract a real backend would expose.",
+    role: [
+      "Designed and built the complete frontend — marketing site, authentication, onboarding, and the authenticated application",
+      "Designed the product architecture and information architecture across 13+ authenticated routes",
+      "Built a design system with light and dark themes, a brass accent, sentiment and severity scales, and platform tints",
+      "Built the multi-region content operations workflow: dashboard, live feed, alerts, sentiment, trends, entities, reports, sources, integrations, and settings",
+      "Designed and implemented the Agent chat workspace with inline AI-generated charts",
+      "Built the command palette with keyboard navigation and cross-workspace search",
+      "Implemented a sidebar with desktop collapse/expand, mobile drawer, and persisted state",
+      "Built a typed domain model covering entities, mentions, alerts, trends, regions, reports, and agent messages",
+      "Built a mock service layer with realistic data shaped to the future API contract",
+      "Implemented route protection via edge middleware with a session cookie and next-param redirect handling",
+      "Built the 6-step onboarding flow with a persisted Zustand store across steps",
+      "Designed the weekly executive brief as an editorial memo format rather than a dashboard export",
+      "Made the product responsive down to mobile with a full nav drawer treatment",
+      "Wrote reusable components (MetricCard, MentionRow, AlertRow, EntityCard, SentimentChart, RegionHeatmap, TrendCard, AgentChart, and others) so pages compose rather than duplicate",
+    ],
+    challenges: [
+      "Designing a dense intelligence interface that feels powerful without feeling overwhelming — moving away from dashboard-by-numbers toward narrative-first presentation",
+      "Establishing a visual language that reads as premium editorial rather than generic AI SaaS — solving for warmth, restraint, and brand-consistent use of a single accent color",
+      "Making the Agent chat feel real on the frontend: streaming-style typing, keyword-matched responses, and charts rendered inline against mock data",
+      "Designing for both light and dark themes without inverting — every token re-tuned for its own context rather than color-swapped",
+      "Keeping a coherent design system across 30+ screens with reusable primitives instead of one-off styles",
+      "Modelling a domain this large — 13 routes, 8 entity types, 7 regions, 4 data sources, 4 alert severities — without the type system becoming noise",
+      "Building a command palette that stays fast and legible while searching across navigation, entities, and actions",
+      "Structuring a mock data layer that mirrors the eventual API contract so swapping to a real backend is a drop-in change, not a rewrite",
+      "Handling SSR/CSR hydration correctly for live-feeling components (rotating feeds, relative timestamps, theme initialization) without falling back to client-only rendering",
+      "Designing the onboarding flow as six coherent steps that never feel like a tax, while persisting state cleanly across navigation",
+      "Wiring edge middleware for route protection with sensible redirect behavior (`?next=` preservation, auth-page bounce-back) using a mock session that mirrors what a real auth service would provide",
+      "Balancing the amount of information per screen for users who are reading this daily — regional detail for some, one-line takeaways for others",
+    ],
+    lessons: [
+      "Learned how much of a premium SaaS feel comes from restraint — one accent color used deliberately, strong typography scale, and negative space — rather than from adding more visual elements",
+      "Learned that dense interfaces need narrative anchors, not just data density — the weekly brief and Agent chat emerged as the most valuable screens because they explain rather than display",
+      "Gained practical experience designing with a full design-token system in Tailwind v4 and switching the entire product theme via CSS variables rather than per-component conditionals",
+      "Learned how to build an Agent interface that feels conversational even without a real backend by simulating typing cadence, matching queries to canned responses, and rendering charts dynamically",
+      "Learned how to structure a mock service layer that will cleanly swap for a real API — same function signatures, same return shapes, same error surface",
+      "Developed a better understanding of the edge between frontend and auth: what route protection, session cookies, and redirect handling actually need to look like before the backend exists",
+      "Learned to invest in reusable primitives early — MetricCard, MentionRow, SentimentChart, and RegionHeatmap each got reused on 4+ pages, which saved more time than it cost",
+      "Gained experience debugging hydration mismatches from time-dependent and random state, and solving them cleanly with fixed anchors and mounted guards",
+      "Learned that onboarding is a product, not a form — the flow needed its own design, its own pacing, and its own reward screen",
+      "Learned that a command palette changes how the whole product feels — once it works, the app reads as a power tool rather than a dashboard",
+      "Developed a deeper appreciation for how B2B intelligence products differ from consumer-facing AI tools: the value is in trust, provenance, and calm presentation, not novelty",
+      "Learned how to scope a large frontend build by sequencing drops — shell, dashboard, feed, agent, analytics, reports, settings — so the product becomes navigable end-to-end early and stays navigable as it deepens",
+    ],
+    gallery: [],
+    links: [
+      { label: "Source Code", href: "#" },
+      { label: "Live Project", href: "#" },
+    ],
+  },
+  {
+    show: 0,
     slug: "align-ai",
     image: jobAlignAi.src,
     title: "Align AI",
@@ -424,12 +802,12 @@ export const projects: Project[] = [
     image: nexahomeAi.src,
     title: "NexaHome AI",
     subtitle: "Unified IoT Control, Energy Monitoring & Smart Home Automation",
-  
+
     description:
       "An AI-powered smart home platform that connects IoT devices across different ecosystems into a single control interface, monitors energy consumption, and enables intelligent automations based on time, temperature, schedules, and device conditions.",
-  
+
     category: "product",
-  
+
     tags: [
       "Next.js",
       "React",
@@ -442,26 +820,26 @@ export const projects: Project[] = [
       "Smart Home",
       "Energy Monitoring",
     ],
-  
+
     year: "2026",
-  
+
     featured: false,
-  
+
     link: "https://ai-nexahome.vercel.app/",
-  
+
     number: "04",
-  
+
     technologies: [
       {
         category: "Frontend",
         items: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
       },
-  
+
       {
         category: "Backend",
         items: ["Node.js", "REST APIs"],
       },
-  
+
       {
         category: "IoT",
         items: [
@@ -470,7 +848,7 @@ export const projects: Project[] = [
           "Smart Home Protocols",
         ],
       },
-  
+
       {
         category: "Automation",
         items: [
@@ -479,7 +857,7 @@ export const projects: Project[] = [
           "Temperature Triggers",
         ],
       },
-  
+
       {
         category: "Analytics",
         items: [
@@ -489,113 +867,113 @@ export const projects: Project[] = [
         ],
       },
     ],
-  
+
     overview:
       "NexaHome AI is a centralized smart home management platform designed to bring IoT devices from different ecosystems into a single interface. Instead of controlling devices through separate manufacturer applications, users can connect and manage their devices from one dashboard. The platform also monitors electricity consumption across connected devices and provides daily, weekly, and monthly usage insights. Users can create intelligent automations that control devices based on schedules, temperature conditions, specific days, and other configurable triggers.",
-  
+
     role: [
       "Designed and developed the unified IoT device management interface",
-  
+
       "Built the dashboard for monitoring and controlling connected smart devices",
-  
+
       "Designed the device integration architecture for managing IoT devices across different platforms",
-  
+
       "Implemented energy consumption tracking for connected devices",
-  
+
       "Created daily, weekly, and monthly electricity usage analytics",
-  
+
       "Built automation workflows based on time, temperature, schedules, and device conditions",
-  
+
       "Designed configurable automation rules that allow users to determine when devices should start or stop",
-  
+
       "Implemented device grouping and centralized control for multiple IoT devices",
-  
+
       "Designed the user experience for managing connected devices, energy usage, and automations from a single platform",
-  
+
       "Focused on creating a scalable architecture capable of supporting multiple IoT ecosystems",
     ],
-  
+
     challenges: [
       "Creating a unified interface for IoT devices that may use different APIs and communication protocols",
-  
+
       "Designing a device abstraction layer so different manufacturers can be controlled consistently",
-  
+
       "Handling differences in device capabilities, states, and available controls across platforms",
-  
+
       "Calculating and presenting meaningful electricity consumption data across different devices",
-  
+
       "Designing reliable automation rules that respond correctly to time, temperature, and schedule conditions",
-  
+
       "Preventing conflicting automation rules from attempting to control the same device simultaneously",
-  
+
       "Keeping device states synchronized between the physical devices and the centralized dashboard",
-  
+
       "Designing the system to remain scalable as users add more devices and integrations",
     ],
-  
+
     lessons: [
       "Learned how to design centralized control systems for heterogeneous IoT devices",
-  
+
       "Gained a deeper understanding of integrating external device APIs into a unified application",
-  
+
       "Learned the importance of abstraction layers when working with devices from different ecosystems",
-  
+
       "Developed a better understanding of energy consumption monitoring and usage analytics",
-  
+
       "Learned how event-driven automation can be combined with schedules and environmental conditions",
-  
+
       "Gained experience designing automation systems that need to handle conflicting rules and device states",
-  
+
       "Learned how to design dashboards that turn raw IoT data into useful information for everyday users",
     ],
-  
+
     gallery: [
       // {
       //   type: "image-text",
       //   src: "",
       //   alt: "NexaHome AI smart home dashboard",
       //   caption: "Unified smart home dashboard",
-  
+
       //   text:
       //     "NexaHome AI brings connected devices from different ecosystems into one centralized dashboard. Users can view device status, control individual devices, and organize their smart home without switching between multiple manufacturer applications.",
       // },
-  
+
       // {
       //   type: "image-text",
       //   src: "",
       //   alt: "NexaHome AI energy monitoring dashboard",
       //   caption: "Energy consumption monitoring",
-  
+
       //   text:
       //     "The energy dashboard provides users with daily, weekly, and monthly electricity consumption insights, helping them understand which connected devices consume the most power and how their usage changes over time.",
       // },
-  
+
       // {
       //   type: "image-text",
       //   src: "",
       //   alt: "NexaHome AI automation builder",
       //   caption: "Smart automation builder",
-  
+
       //   text:
       //     "Users can create custom automations that control devices according to time, temperature, selected days, and other conditions. Automations can determine when devices should start, stop, or change their state automatically.",
       // },
-  
+
       // {
       //   type: "image-text",
       //   src: "",
       //   alt: "NexaHome AI connected devices",
       //   caption: "Connected device management",
-  
+
       //   text:
       //     "Connected IoT devices can be grouped and managed from a single interface, giving users centralized control over their smart home ecosystem.",
       // },
     ],
-  
+
     links: [
       { label: "Source Code", href: "#" },
       { label: "Live Project", href: "#" },
     ],
-  
+
     confidential: 1,
   },
   {
@@ -853,7 +1231,7 @@ export const projects: Project[] = [
     confidential: 0,
   },
   {
-    show: 0,
+    show: 1,
     slug: "AHomeAZen",
     image: homezen.src,
     title: "Home Zen",
